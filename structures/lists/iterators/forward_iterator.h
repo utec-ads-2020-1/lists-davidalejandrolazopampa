@@ -20,6 +20,34 @@ class ForwardIterator {
         ForwardIterator<T> operator++();
 
         T operator*();
+
+        //////////Iniciando//////////
+        ForwardIterator(){
+
+        }
+        ForwardIterator(Node<T>*){
+
+        }
+        /*Equals an iterator to another*/
+        ForwardIterator<T> operator=(ForwardIterator<T>){
+
+        }
+        /*Returns if the iterator is different from another iterator*/
+        bool operator!=(ForwardIterator<T>){
+
+        }
+        /*Advance one position*/
+        ForwardIterator<T> operator++(){
+
+        }
+        /*Goes back one position*/
+        ForwardIterator<T> operator--(){
+
+        }
+        /*Returns the content of the iterator*/
+        T operator*(){
+
+        }
 };
 
 #endif
