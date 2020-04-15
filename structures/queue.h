@@ -3,66 +3,66 @@
 
 using namespace std;
 
-#define MAX 1000 
+#define MAX 1000
 
 // TODO: Implement all methods
 template <typename T>
 class queue {
-	T* data;
-	int top;
-	int capacity;
+    T* data;
+    int top;
+    int capacity;
 
 public:
     queue(int size = MAX);
     ~queue();
 
-	void push(T);
-	int pop();
-	int front();
-    int back();
+    void push(T);
+    void pop();
+    T front();
+    T back();
 
-	int size();
-	bool empty();
+    int size();
+    bool empty();
 };
 //////////Iniciando//////////
 /*constructor*/
-template <T>
+template <typename T>
 queue<T>::queue(int value){
 
 }
 /*Destroyer*/
-template <T>
+template <typename T>
 queue<T>::~queue() {
 
 }
 /*Adds an element*/
-template <T>
-void push(T value){
+template <typename T>
+void queue<T>::push(T value){
 
 }
 /*Removes an element*/
-template <T>
-int pop(){
+template <typename T>
+int queue<T>::pop(){
 
 }
 /*Returns the top element*/
-template <T>
-int front(){
+template <typename T>
+int queue<T>::front(){
 
 }
 /*Returns the back element*/
-template <T>
-int back(){
+template <typename T>
+int queue<T>::back(){
 
 }
 /*The current count of elements*/
-template <T>
-int size(){
+template <typename T>
+int queue<T>::size(){
 
 }
 /*If the data structure is empty*/
-template <T>
-bool empty(){
+template <typename T>
+bool queue<T>::empty(){
 
 }
 

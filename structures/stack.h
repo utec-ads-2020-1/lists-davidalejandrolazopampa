@@ -3,27 +3,25 @@
 
 using namespace std;
 
-#define MAX 1000 
+#define MAX 1000
 
 // TODO: Implement all methods
 template <typename T>
 class stack {
-	T* data;
-	int tops;//Variable cambiada por comflicto con funcion top();
-	int capacity;
+    T* data;
+    int top;
+    int capacity;
 
 public:
+    stack(int size = MAX);
+    ~stack();
 
-	stack(int size = MAX);
-	~stack();
+    void push(T);
+    void pop();
+    T peak();
 
-	void push(T);
-	int pop();
-	int top();
-
-	int size();
-	bool empty();
-
+    int size();
+    bool empty();
 };
 //////////Iniciando//////////
 /*constructor*/
@@ -43,12 +41,12 @@ void stack<T>::push(T value){
 }
 /*Removes an element*/
 template <typename T>
-int stack<T>::pop(){
+void stack<T>::pop(){
 
 }
 /*Returns the top element*/
 template <typename T>
-int stack<T>::top(){
+T stack<T>::peak(){
 
 }
 
