@@ -22,6 +22,35 @@ class BidirectionalIterator {
         BidirectionalIterator<T> operator--();
 
         T operator*();
+
+        //////////Iniciando//////////
+        BidirectionalIterator(){
+
+        }
+        BidirectionalIterator(Node<T>*){
+
+        }
+        /*Equals an iterator to another*/
+        BidirectionalIterator<T> operator=(BidirectionalIterator<T>){
+
+        }
+        /*Returns if the iterator is different from another iterator*/
+        bool operator!=(BidirectionalIterator<T>){
+
+        }
+        /*Advance one position*/
+        BidirectionalIterator<T> operator++(){
+
+        }
+        /*Goes back one position*/
+        BidirectionalIterator<T> operator--(){
+
+        }
+        /*Returns the content of the iterator*/
+        T operator*(){
+
+        }
+
 };
 
 #endif
