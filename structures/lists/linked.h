@@ -42,67 +42,82 @@ class LinkedList : public List<T> {
         */
         void merge(LinkedList<T>&);
 
+
+};
         //////////Iniciando//////////
         /*Returns the top element*/
-        T front(){
+        template <typename T>
+        T LinkedList<T>::front(){
 
         }
         /*Returns the back element*/
-        T back(){
+        template <typename T>
+        T LinkedList<T>::back(){
 
         }
         /*Adds an element to the front*/
-        void push_front(T value){
+        template <typename T>
+        void LinkedList<T>::push_front(T value){
 
         }
         /*Adds an element to the back*/
-        void push_back(T value){
+        template <typename T>
+        void LinkedList<T>::push_back(T value){
 
         }
         /*Removes the front element, and updates a new front if necessary*/
-        void pop_front(){
+        template <typename T>
+        void LinkedList<T>::pop_front(){
 
         }
         /*Removes the back element, and updates a new back if necessary*/
-        void pop_back(){
+        template <typename T>
+        void LinkedList<T>::pop_back(){
 
         }
         /*Returns an element in a certain position*/
-        T operator[](int index){
+        template <typename T>
+        T LinkedList<T>::operator[](int value) {
 
         }
         /*If the data structure is empty*/
-        bool empty(){
+        template <typename T>
+        bool LinkedList<T>::empty(){
 
         }
         /*The current count of elements*/
-        int size(){
+        template <typename T>
+        int LinkedList<T>::size(){
 
         }
         /*Remove all the elements*/
-        void clear(){
+        template <typename T>
+        void LinkedList<T>::clear(){
 
         }
         /*Sorts the elements, you can use any sorting algorithm*/
-        void sort(){
+        template <typename T>
+        void LinkedList<T>::sort(){
 
         }
         /*Reverts the elements of the structure*/
-        void reverse(){
+        template <typename T>
+        void LinkedList<T>::reverse(){
 
         }
         /**/
-        BidirectionalIterator<T> begin(){
+        template <typename T>
+        BidirectionalIterator<T> LinkedList<T>::begin() {
 
         }
         /**/
-        BidirectionalIterator<T> end(){
+        template <typename T>
+        BidirectionalIterator<T> LinkedList<T>::end() {
 
         }
         /*Transfers all elements*/
-        void merge(LinkedList<T> &list){
+        template <typename T>
+        void LinkedList<T>::merge(LinkedList<T> &list){
 
         }
-};
-
 #endif
