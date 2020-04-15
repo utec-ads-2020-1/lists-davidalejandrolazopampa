@@ -41,6 +41,68 @@ class CircularLinkedList : public List<T> {
          * or whether the value_type supports move-construction or not.
         */
         void merge(CircularLinkedList<T>&);
+
+        //////////Iniciando//////////
+        /*Returns the top element*/
+        T front(){
+
+        }
+        /*Returns the back element*/
+        T back(){
+
+        }
+        /*Adds an element to the front*/
+        void push_front(T value){
+
+        }
+        /*Adds an element to the back*/
+        void push_back(T value){
+
+        }
+        /*Removes the front element, and updates a new front if necessary*/
+        void pop_front(){
+
+        }
+        /*Removes the back element, and updates a new back if necessary*/
+        void pop_back(){
+
+        }
+        /*Returns an element in a certain position*/
+        T operator[](int index){
+
+        }
+        /*If the data structure is empty*/
+        bool empty(){
+
+        }
+        /*The current count of elements*/
+        int size(){
+
+        }
+        /*Remove all the elements*/
+        void clear(){
+
+        }
+        /*Sorts the elements, you can use any sorting algorithm*/
+        void sort(){
+
+        }
+        /*Reverts the elements of the structure*/
+        void reverse(){
+
+        }
+        /**/
+        BidirectionalIterator<T> begin(){
+
+        }
+        /**/
+        BidirectionalIterator<T> end(){
+
+        }
+        /**/
+        void merge(CircularLinkedList<T> &list){
+
+        }
 };
 
 #endif

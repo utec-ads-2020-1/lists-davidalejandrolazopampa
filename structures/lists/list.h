@@ -28,6 +28,11 @@ class List {
         virtual void sort() = 0;
         virtual void reverse() = 0;
         virtual string name() = 0;
+        //Destructor
+        ~List(){
+
+        }
+
 };
 
 #endif
