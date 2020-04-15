@@ -23,34 +23,41 @@ class BidirectionalIterator {
 
         T operator*();
 
+
+
+};
         //////////Iniciando//////////
-        BidirectionalIterator(){
+        template <typename T>
+        BidirectionalIterator<T>::BidirectionalIterator(){
 
         }
-        BidirectionalIterator(Node<T>*){
+        template <typename T>
+        BidirectionalIterator<T> ::BidirectionalIterator(Node<T> *) {
 
         }
         /*Equals an iterator to another*/
-        BidirectionalIterator<T> operator=(BidirectionalIterator<T>){
+        template <typename T>
+        BidirectionalIterator<T> BidirectionalIterator<T>::operator=(BidirectionalIterator<T>){
 
         }
         /*Returns if the iterator is different from another iterator*/
-        bool operator!=(BidirectionalIterator<T>){
+        template <typename T>
+        bool BidirectionalIterator<T>::operator!=(BidirectionalIterator<T>){
 
         }
         /*Advance one position*/
-        BidirectionalIterator<T> operator++(){
+        template <typename T>
+        BidirectionalIterator<T> BidirectionalIterator<T>::operator++() {
 
         }
         /*Goes back one position*/
-        BidirectionalIterator<T> operator--(){
+        template <typename T>
+        BidirectionalIterator<T> BidirectionalIterator<T>::operator--(){
 
         }
         /*Returns the content of the iterator*/
-        T operator*(){
+        template <typename T>
+        T BidirectionalIterator<T>::operator*(){
 
         }
-
-};
-
 #endif
