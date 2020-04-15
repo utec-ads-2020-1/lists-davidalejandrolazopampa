@@ -7,7 +7,7 @@ struct Node {
     Node<T>* next;
     Node<T>* prev;
 
-    
+
     /****Destructor*****/
     void killSelf(Node<T>* node){
         if(next!=node){next->killSelf(node);}
