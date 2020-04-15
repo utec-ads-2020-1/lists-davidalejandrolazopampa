@@ -99,7 +99,7 @@ class CircularLinkedList : public List<T> {
         BidirectionalIterator<T> end(){
 
         }
-        /**/
+        /*Transfers all elements*/
         void merge(CircularLinkedList<T> &list){
 
         }
