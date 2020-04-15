@@ -9,12 +9,13 @@ using namespace std;
 template <typename T>
 class stack {
 	T* data;
-	int top;
+	int tops;//Variable cambiada por comflicto con funcion top();
 	int capacity;
 
 public:
+
 	stack(int size = MAX);
-	~stack();   		
+	~stack();
 
 	void push(T);
 	int pop();
@@ -23,48 +24,42 @@ public:
 	int size();
 	bool empty();
 
-    //////////Iniciando//////////
-    /*constructor*/
-    template <T>
-    stack(int value){
-
-    }
-    /*Destroyer*/
-    template <T>
-    ~stack(){
-
-    }
-    /*Adds an element*/
-    template <T>
-    void push(T value){
-
-    }
-    /*Removes an element*/
-    template <T>
-    int pop(){
-
-    }
-    /*Returns the top element*/
-    template <T>
-    int front(){
-
-    }
-    /*Returns the back element*/
-    template <T>
-    int back(){
-
-    }
-    /*The current count of elements*/
-    template <T>
-    int size(){
-
-    }
-    /*If the data structure is empty*/
-    template <T>
-    bool empty(){
-
-    }
-
 };
+//////////Iniciando//////////
+/*constructor*/
+template <typename T>
+stack<T>::stack(int value){
+cout<<value;
+}
+/*Destroyer*/
+template <typename T>
+stack<T>::~stack(){
 
+}
+/*Adds an element*/
+template <typename T>
+void stack<T>::push(T value){
+
+}
+/*Removes an element*/
+template <typename T>
+int stack<T>::pop(){
+
+}
+/*Returns the top element*/
+template <typename T>
+int stack<T>::top(){
+
+}
+
+/*The current count of elements*/
+template <typename T>
+int stack<T>::size(){
+
+}
+/*If the data structure is empty*/
+template <typename T>
+bool stack<T>::empty(){
+
+}
 #endif
