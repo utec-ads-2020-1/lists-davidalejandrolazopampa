@@ -100,7 +100,9 @@ class ForwardList : public List<T>, public error_code {
                 for(int i=1;i<size;++i){newNode=newNode->next;}
                 delete this->tail;
                 if(this->nodes==1){this->head= nullptr;}
-                else{this->tail=newNode;}
+                else{
+                    newNode->next= nullptr;
+                    this->tail=newNode;}
                 --this->nodes;
             }
         }
@@ -177,7 +179,7 @@ class ForwardList : public List<T>, public error_code {
             }
             else{this->tail->next= nullptr;}
         }
-        /**/
+
         template <typename T>
         ForwardIterator<T> ForwardList<T>::begin() {
             return ForwardIterator<T>(this->head);
