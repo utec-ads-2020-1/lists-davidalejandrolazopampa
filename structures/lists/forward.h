@@ -82,7 +82,14 @@ class ForwardList : public List<T> {
         /*Removes the front element, and updates a new front if necessary*/
         template <typename T>
         void ForwardList<T>::pop_front(){
-
+            if(this->nodes){
+                Node<T>* newNode=this->head->next;
+                delete this->head;
+                this->head=nullptr;
+                if(this->nodes==1){this->tail=nullptr;}
+                else{this->head=newNode;}
+                --this->nodes;
+            }
         }
         /*Removes the back element, and updates a new back if necessary*/
         template <typename T>
