@@ -27,7 +27,7 @@ public:
 /*constructor*/
 template <typename T>
 stack<T>::stack(int value){
-cout<<value;
+
 }
 /*Destroyer*/
 template <typename T>
