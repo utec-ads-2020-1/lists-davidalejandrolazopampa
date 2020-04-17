@@ -13,6 +13,11 @@ struct Node {
         }
         delete this;
     }
+    /**/
+    void reverseForward(Node<T>* node){
+        if(next->next!=node){next->reverseForward(node);}
+        next->next=this;
+    }
 };
 
 #endif
