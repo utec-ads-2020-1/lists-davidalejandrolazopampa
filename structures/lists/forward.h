@@ -117,7 +117,7 @@ class ForwardList : public List<T> {
         /*If the data structure is empty*/
         template <typename T>
         bool ForwardList<T>::empty(){
-
+            return !(this->head);
         }
         /*The current count of elements*/
         template <typename T>
