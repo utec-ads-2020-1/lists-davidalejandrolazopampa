@@ -177,7 +177,11 @@ class ForwardList : public List<T> {
         }
         /*Transfers all elements*/
         template <typename T>
-        void ForwardList<T>::merge(ForwardList<T> &list){
-
+        void ForwardList<T>::merge(ForwardList<T> &list){//para lista independiente
+            Node<T> *newNode = list.head;
+            while(newNode != nullptr){
+                push_back(newNode->data);
+                newNode = newNode->next;
+            }
         }
 #endif
