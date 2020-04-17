@@ -107,7 +107,12 @@ class ForwardList : public List<T> {
         /*Returns an element in a certain position*/
         template <typename T>
         T ForwardList<T>::operator[](int index){
-
+            if(index >= 0 && index >= this->nodes){throw new out_of_range("Out of range");}
+            else{
+                auto*temp = this->head;
+                for(int i = 0; i < index; i++){temp = temp->next;}
+                return temp->data;
+            }
         }
         /*If the data structure is empty*/
         template <typename T>
