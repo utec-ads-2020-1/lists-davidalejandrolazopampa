@@ -48,7 +48,8 @@ class ForwardList : public List<T> {
         /*Returns the top element*/
         template <typename T>
         T ForwardList<T>::front(){
-
+            if(this->head != nullptr){return this->head->data;}
+            throw new out_of_range("The ForwardList is empty");
         }
         /*Returns the back element*/
         template <typename T>
