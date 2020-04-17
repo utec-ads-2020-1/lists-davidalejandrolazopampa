@@ -127,7 +127,10 @@ class ForwardList : public List<T> {
         /*Remove all the elements*/
         template <typename T>
         void ForwardList<T>::clear(){
-
+            this->head->killSelf();
+            this->head=nullptr;
+            this->tail= nullptr;
+            this->nodes=0;
         }
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
