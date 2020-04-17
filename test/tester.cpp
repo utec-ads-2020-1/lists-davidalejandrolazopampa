@@ -16,7 +16,7 @@ template <typename T>
 List<T>* Tester::getCollection(Collection collection) {
     switch (collection) {
         case forward_list: return new ForwardList<T>();
-        //case linked_list: return new LinkedList<T>();
+       // case linked_list: return new LinkedList<T>();
         //case circular_list: return new CircularLinkedList<T>();
         default: throw invalid_argument("Not a valid collection - build");
     }

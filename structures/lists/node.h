@@ -14,8 +14,9 @@ struct Node {
         delete this;
     }
     /**/
-    void reverseForward(Node<T>* node){
-        if(next->next!=node){next->reverseForward(node);}
+    void reverseF(Node<T>* node){
+        if(next->next!=node)
+            next->reverseF(node);
         next->next=this;
     }
     void reverseCircular(Node<T>* node){

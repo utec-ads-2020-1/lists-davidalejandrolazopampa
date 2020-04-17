@@ -1,7 +1,7 @@
 #include <iostream>
-//#include "test/tester.h"
-#include "structures/stack.h"
-#include "structures/lists/forward.h"
+#include "test/tester.h"
+//#include "structures/stack.h"
+//#include "structures/lists/forward.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -9,9 +9,11 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
     //Prueba Stack
-    auto *stack2 = new stack<int>();
+    //auto *stack2 = new stack<int>();
     cout<<endl;
-    //Tester::execute();
+
+    Tester::execute();
+    /*
     //-FORWARD test
     auto* forward1 = new ForwardList<int>();
     forward1->push_back(3);
@@ -57,7 +59,7 @@ int main(int argc, char *argv[]) {
     forward1->print();
     cout << "Front: " << forward1->front() << endl;
     cout << "Back: " << forward1->back() << endl;
-
+*/
 
 
 
