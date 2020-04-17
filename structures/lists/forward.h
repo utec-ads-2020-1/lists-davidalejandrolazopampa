@@ -122,7 +122,7 @@ class ForwardList : public List<T> {
         /*The current count of elements*/
         template <typename T>
         int ForwardList<T>::size(){
-
+            return this->nodes;
         }
         /*Remove all the elements*/
         template <typename T>
