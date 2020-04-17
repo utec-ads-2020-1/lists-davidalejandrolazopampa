@@ -170,7 +170,10 @@ class ForwardList : public List<T> {
         /**/
         template <typename T>
         ForwardIterator<T> ForwardList<T>::end() {
+            //Opcion 1
             return ForwardIterator<T>(this->tail->next);
+            //Opcion 2
+            //return ForwardIterator<T>(nullptr);
         }
         /*Transfers all elements*/
         template <typename T>
