@@ -135,7 +135,22 @@ class ForwardList : public List<T> {
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
         void ForwardList<T>::sort(){
-
+            int x=1;
+            T *tempArray =new T[this->nodes];
+            auto* aux = this->head->next;
+            tempArray[0] = aux->data;
+            while(aux->next != nullptr){
+                aux = aux->next;
+                tempArray[x]=aux->data;
+                x++;
+            }
+            sort(tempArray,tempArray+this->nodes);
+            clear();
+            x=0;
+            while (x != size()){
+                push_back(tempArray[x]);
+                x++;
+            }
         }
         /*Reverts the elements of the structure*/
         template <typename T>
