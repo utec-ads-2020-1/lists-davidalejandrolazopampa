@@ -164,7 +164,7 @@ class ForwardList : public List<T> {
         /**/
         template <typename T>
         ForwardIterator<T> ForwardList<T>::begin() {
-
+            return ForwardIterator<T>(this->head);
         }
 
         /**/
