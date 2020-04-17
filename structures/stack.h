@@ -23,41 +23,54 @@ public:
     int size();
     bool empty();
 };
+
 //////////Iniciando//////////
 /*constructor*/
+/*
 template <typename T>
 stack<T>::stack(int value){
 
 }
+ */
 /*Destroyer*/
+/*
 template <typename T>
 stack<T>::~stack(){
 
 }
+ */
 /*Adds an element*/
+/*
 template <typename T>
 void stack<T>::push(T value){
 
 }
+ */
 /*Removes an element*/
+/*
 template <typename T>
 void stack<T>::pop(){
 
 }
+ */
 /*Returns the top element*/
+/*
 template <typename T>
 T stack<T>::peak(){
 
 }
-
+*/
 /*The current count of elements*/
+/*
 template <typename T>
 int stack<T>::size(){
 
-}
+}*/
 /*If the data structure is empty*/
+/*
 template <typename T>
 bool stack<T>::empty(){
 
 }
+*/
 #endif

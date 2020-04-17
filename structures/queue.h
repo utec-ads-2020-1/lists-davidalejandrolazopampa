@@ -24,6 +24,7 @@ public:
     int size();
     bool empty();
 };
+/*
 //////////Iniciando//////////
 /*constructor*/
 template <typename T>
@@ -66,6 +67,6 @@ bool queue<T>::empty(){
 
 }
 
-
+*/
 
 #endif
