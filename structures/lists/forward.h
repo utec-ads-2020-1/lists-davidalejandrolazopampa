@@ -60,12 +60,24 @@ class ForwardList : public List<T> {
         /*Adds an element to the front*/
         template <typename T>
         void ForwardList<T>::push_front(T value){
-
+            Node<T>* newNode=new Node<T>;
+            newNode->data=value;
+            newNode->next= nullptr;
+            if(this->head){newNode->next=this->head;}
+            else{this->tail=newNode;}
+            this->head=newNode;
+            ++this->nodes;
         }
         /*Adds an element to the back*/
         template <typename T>
         void ForwardList<T>::push_back(T value){
-
+            Node<T>* newNode=new Node<T>;
+            newNode->data=value;
+            newNode->next= nullptr;
+            if(this->head){this->tail->next=newNode;}
+            else{this->head=newNode;}
+            this->tail=newNode;
+            ++this->nodes;
         }
         /*Removes the front element, and updates a new front if necessary*/
         template <typename T>
