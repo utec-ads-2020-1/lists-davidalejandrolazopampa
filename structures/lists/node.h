@@ -18,6 +18,9 @@ struct Node {
         if(next->next!=node){next->reverseForward(node);}
         next->next=this;
     }
+    void reverseCircular(Node<T>* node){
+
+    }
 };
 
 #endif
