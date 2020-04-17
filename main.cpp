@@ -7,8 +7,12 @@ int main(int argc, char *argv[]) {
     cout << "===========================================================" << endl;
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
-    auto *stack2 = new stack<int>();
 
     //Tester::execute();
+
+    //Prueba Stack
+    //auto *stack2 = new stack<int>();
+
+
     return EXIT_SUCCESS;
 }
