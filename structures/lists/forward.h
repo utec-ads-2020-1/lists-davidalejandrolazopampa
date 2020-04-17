@@ -6,7 +6,7 @@
 
 // TODO: Implement all methods
 template <typename T>
-class ForwardList : public List<T> {
+class ForwardList : public List<T>, public error_code {
     public:
         ForwardList() : List<T>() {}
 
@@ -135,6 +135,7 @@ class ForwardList : public List<T> {
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
         void ForwardList<T>::sort(){
+/*
             int x=1;
             T *tempArray =new T[this->nodes];
             auto* aux = this->head->next;
@@ -150,6 +151,21 @@ class ForwardList : public List<T> {
             while (x != size()){
                 push_back(tempArray[x]);
                 x++;
+            }*/
+
+            auto temp = this->head;
+            T max;
+
+            for(int i = 0; i < this->nodes; ++i){
+                while(temp->next != nullptr){
+                    if(temp->data > temp->next->data){
+                        max = temp->data;
+                        temp->data = temp->next->data;
+                        temp->next->data = max;
+                    }
+                    temp = temp->next;
+                }
+                temp = this->head;
             }
         }
         /*Reverts the elements of the structure*/

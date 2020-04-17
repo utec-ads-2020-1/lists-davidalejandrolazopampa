@@ -28,10 +28,22 @@ class List {
         virtual void sort() = 0;
         virtual void reverse() = 0;
         virtual string name() = 0;
-
+        virtual void print();
 
 
 };
-        //Destructor
+template<typename T>
+void List<T>::print(){
+    if(empty())
+        cerr << name() + " is empty\n";
+    else {
+        auto temp = head;
+        for(int i = 0; i < nodes; ++i){
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+}
 
 #endif
