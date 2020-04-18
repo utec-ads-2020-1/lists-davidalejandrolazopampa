@@ -19,8 +19,9 @@ struct Node {
             next->reverseForward(node);
         next->next=this;
     }
-    void reverseCircular(Node<T>* node){
-
+    void reverseLinked(Node<T>* node){
+        if(next!=node){next->reverseLinked(node);}
+        else{swap(prev,next);}
     }
 };
 

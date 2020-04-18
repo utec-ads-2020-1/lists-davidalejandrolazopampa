@@ -115,7 +115,7 @@ class LinkedList : public List<T> {
         }
         /*Returns an element in a certain position*/
         template <typename T>
-        T LinkedList<T>::operator[](int value) {
+        T LinkedList<T>::operator[](int index) {
             if(index>=this->nodes){throw new out_of_range("Out of range");}
             else{
                 Node <T> *temp = this->head;
@@ -169,21 +169,27 @@ class LinkedList : public List<T> {
         template <typename T>
         void LinkedList<T>::reverse(){
             if(this->nodes){
-                this->head->reverseForward(nullptr);swap(this->head,this->tail);}
+                this->head->reverseLinked(nullptr);
+                swap(this->head,this->tail);
+            }
         }
         /**/
         template <typename T>
         BidirectionalIterator<T> LinkedList<T>::begin() {
-
+            return ForwardIterator<T>(this->head);
         }
         /**/
         template <typename T>
         BidirectionalIterator<T> LinkedList<T>::end() {
-
+            return ForwardIterator<T>(this->tail->next);
         }
         /*Transfers all elements*/
         template <typename T>
         void LinkedList<T>::merge(LinkedList<T> &list){
-
+            Node<T>* newNode = list.head;
+            while (newNode != nullptr){
+                this->push_back(newNode->data);
+                newNode=newNode->next;
+            }
         }
 #endif
