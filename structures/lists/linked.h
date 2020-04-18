@@ -49,13 +49,13 @@ class LinkedList : public List<T> {
         template <typename T>
         T LinkedList<T>::front(){
             if(this->head){ return this->head->data;}
-            else{throw new out_of_range("Empty list");}
+            else{throw new out_of_range("The Linked is empty");}
         }
         /*Returns the back element*/
         template <typename T>
         T LinkedList<T>::back(){
             if(!empty()){ return this->tail->data;}
-            else{throw new out_of_range("Empty list");}
+            else{throw new out_of_range("The Linked is empty");}
         }
         /*Adds an element to the front*/
         template <typename T>
@@ -75,7 +75,7 @@ class LinkedList : public List<T> {
         void LinkedList<T>::push_back(T value){
             Node<T>* newNode=new Node<T>;
             newNode->data=value;
-            //newNode->next= nullptr;
+            newNode->next= nullptr;
             if(this->nodes){
                 newNode->prev=this->tail;
                 this->tail->next=newNode;
@@ -90,13 +90,13 @@ class LinkedList : public List<T> {
             if(this->nodes){
                 Node<T>* newNode=this->head->next;
                 delete this->head;
-                this->head= nullptr;
+                //this->head= nullptr;
                 if(this->nodes==1){this->tail=nullptr;}
                 else{
                     newNode->prev=nullptr;
                     this->head=newNode;
                 }
-                --this->newNodes;
+                --this->nodes;
             }
         }
         /*Removes the back element, and updates a new back if necessary*/
@@ -176,12 +176,12 @@ class LinkedList : public List<T> {
         /**/
         template <typename T>
         BidirectionalIterator<T> LinkedList<T>::begin() {
-            return ForwardIterator<T>(this->head);
+            return BidirectionalIterator<T>(this->head);
         }
         /**/
         template <typename T>
         BidirectionalIterator<T> LinkedList<T>::end() {
-            return ForwardIterator<T>(this->tail->next);
+            return BidirectionalIterator<T>(this->tail->next);
         }
         /*Transfers all elements*/
         template <typename T>

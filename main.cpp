@@ -1,7 +1,9 @@
 #include <iostream>
+#include <lists/linked.h>
 #include "test/tester.h"
 //#include "structures/stack.h"
 //#include "structures/lists/forward.h"
+//#include "structures/lists/list.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -67,8 +69,11 @@ int main(int argc, char *argv[]) {
     cout << "Back: " << forward1->back() << endl;
 */
     //-LINKED test
-
-
+    /*
+    auto * linked1 = new LinkedList<int>();
+    linked1->push_back(2);
+    linked1->print();
+    */
 
     return EXIT_SUCCESS;
 }
