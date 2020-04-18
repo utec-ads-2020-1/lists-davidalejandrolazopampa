@@ -15,7 +15,7 @@ void Tester::execute() {
 template <typename T>
 List<T>* Tester::getCollection(Collection collection) {
     switch (collection) {
-        case forward_list: return new ForwardList<T>();
+        //case forward_list: return new ForwardList<T>();
         case linked_list: return new LinkedList<T>();
         //case circular_list: return new CircularLinkedList<T>();
         default: throw invalid_argument("Not a valid collection - build");
@@ -25,7 +25,7 @@ List<T>* Tester::getCollection(Collection collection) {
 template <typename T>
 void Tester::testSpecifics(Collection collection, List<T>* list) {
     switch (collection) {
-        case forward_list: testForward((ForwardList<T>*) list); break;
+        //case forward_list: testForward((ForwardList<T>*) list); break;
         case linked_list: testLinked((LinkedList<T>*) list); break;
         //case circular_list: testCircularLinked((CircularLinkedList<T>*) list); break;
         default: throw invalid_argument("Not a valid collection - specifics");
@@ -42,42 +42,42 @@ void Tester::testList(Collection collection) {
 
     ASSERT(list->size() == 0, "The " + list->name() + " size is not working");
     ASSERT(list->empty() == true, "The " + list->name() + " empty is not working");
-
+    cout << "Completed 1: " << list->name() << endl;
     list->push_back(elements[0]);
     list->push_back(elements[1]);
     ASSERT(list->size() == 2, "The " + list->name() + " push_back or size is not working");
     ASSERT((*list)[1] == elements[1], "The " + list->name() + " operator [] is not working");
-
+    cout << "Completed 2: " << list->name() << endl;
     list->push_back(elements[2]);
     list->push_back(elements[3]);
     list->pop_front();
     ASSERT(list->size() == 3, "The " + list->name() + " pop_front is not working");
     ASSERT(list->front() == elements[1], "The " + list->name() + " front is not working");
     ASSERT((*list)[2] == elements[3], "The " + list->name() + " operator [] is not working");
-
+    cout << "Completed 3: " << list->name() << endl;
     list->push_back(elements[4]);
     list->push_back(elements[5]);
     list->pop_back();
     ASSERT(list->size() == 4, "The " + list->name() + " pop_back is not working");
     ASSERT(list->back() == elements[4], "The " + list->name() + " back is not working");
-    
+    cout << "Completed 4: " << list->name() << endl;
     list->reverse();
-
+    cout << "Completed: 5" << list->name() << endl;
     ASSERT(list->back() == elements[1], "The " + list->name() + " reverse is not working");
     ASSERT(list->front() == elements[4], "The " + list->name() + " reverse is not working");
     ASSERT((*list)[1] == elements[3], "The " + list->name() + " reverse is not working");
     ASSERT((*list)[2] == elements[2], "The " + list->name() + " reverse is not working");
-
+    cout << "Completed 6: " << list->name() << endl;
     list->push_back(elements[6]);
     list->push_back(elements[7]);
     list->sort();
-
+    cout << "Completed: 7" << list->name() << endl;
     ASSERT(isSorted(list), "The " + list->name() + " sort is not working");
-
+    cout << "Completed: 8" << list->name() << endl;
     list->clear();
     ASSERT(list->size() == 0, "The " + list->name() + " size or clear is not working");
     ASSERT(list->empty() == true, "The " + list->name() + " empty is not working");
-
+    cout << "Completed: 9" << list->name() << endl;
     testSpecifics(collection, list);
 
     cout << "Completed: " << list->name() << endl;
@@ -102,7 +102,7 @@ void Tester::print(List<T>* list) {
 
     cout << endl;
 }
-
+/*
 template <typename T>
 void Tester::testForward(ForwardList<T>* list) {
     Mocker mocker;
@@ -126,7 +126,7 @@ void Tester::testForward(ForwardList<T>* list) {
     ++it;
     ASSERT(it != list->end(), "The " + list->name() + " iterator is not working");
 }
-
+*/
 template <typename T>
 void Tester::testLinked(LinkedList<T>* list) {
     Mocker mocker;

@@ -27,11 +27,9 @@ class BidirectionalIterator {
         //////////Iniciando//////////
         template <typename T>
         BidirectionalIterator<T>::BidirectionalIterator(){
-
         }
         template <typename T>
         BidirectionalIterator<T> ::BidirectionalIterator(Node<T> *) {
-
         }
         /*Equals an iterator to another*/
         template <typename T>
@@ -47,20 +45,31 @@ class BidirectionalIterator {
         /*Advance one position*/
         template <typename T>
         BidirectionalIterator<T> BidirectionalIterator<T>::operator++() {
-            if (this->current == nullptr){throw runtime_error("Invalid Operation!");}
-            return this->current = this->current->next;
+            //if (this->current == nullptr){throw out_of_range("Invalid Operation!");}
+            //return this->current = this->current->next;
+            if(this->current){
+                this->current = this->current->prev;
+
+            }
+            return *this;
         }
         /*Goes back one position*/
         template <typename T>
         BidirectionalIterator<T> BidirectionalIterator<T>::operator--(){
-            if(this->current == nullptr){throw runtime_error("Invalid Operation!");}
-            return this->current = this->current->prev;
+            //if(this->current == nullptr){throw out_of_range("Invalid Operation!");}
+            //return this->current = this->current->prev;
+            if(this->current){
+                this->current = this->current->prev;
+            }
+            return *this;
         }
         /*Returns the content of the iterator*/
         template <typename T>
         T BidirectionalIterator<T>::operator*(){
-            if(this->current == nullptr){throw runtime_error("Invalid Operation!");}
+            //if(this->current == nullptr){throw out_of_range("Invalid Operation!");}
+            //return this->current->data;
             return this->current->data;
+
         }
 
 #endif

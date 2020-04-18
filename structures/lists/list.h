@@ -1,6 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
 
+#include <algorithm>//porsiacaso
 #include "node.h"
 
 // TODO: Implement all methods

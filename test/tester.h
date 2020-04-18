@@ -6,7 +6,7 @@
 #include <assert.h>
 
 #include "../mock/mocker.h"
-#include "../structures/lists/forward.h"
+//#include "../structures/lists/forward.h"
 #include "../structures/lists/linked.h"
 //#include "../structures/lists/circular.h"
 
@@ -45,10 +45,10 @@ class Tester {
 
         template <typename T>
         static void testSpecifics(Collection, List<T>*);
-
+        /*
         template <typename T>
         static void testForward(ForwardList<T>*);
-
+*/
         template <typename T>
         static void testLinked(LinkedList<T>*);
 /*

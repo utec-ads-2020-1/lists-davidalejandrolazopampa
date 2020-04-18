@@ -2,6 +2,7 @@
 #include "test/tester.h"
 //#include "structures/stack.h"
 //#include "structures/lists/forward.h"
+//#include "structures/lists/linked.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -62,6 +63,50 @@ int main(int argc, char *argv[]) {
 */
 
 
+//-LINKED test
+/*
+    auto* linked1 = new LinkedList<int>();
+    linked1->push_back(3);
+    linked1->push_back(5);
+    linked1->print();
+    linked1->push_front(10);
+    linked1->push_front(9);
+    linked1->print();
+    cout << "Front: " << linked1->front() << endl;
+    cout << "Back: " << linked1->back() << endl;
+    cout << "Index[0]: " << (*linked1)[0] << endl;
+    linked1->sort();
+    linked1->print();
+    cout << "Front: " << linked1->front() << endl;
+    cout << "Back: " << linked1->back() << endl;
+    linked1->reverse();
+    linked1->print();
+    cout << "Front: " << linked1->front() << endl;
+    cout << "Back: " << linked1->back() << endl;
+
+    LinkedList<int> to_merge;
+    to_merge.push_back(5);
+    to_merge.push_back(6);
+    to_merge.push_back(10);
+    to_merge.print();
+    linked1->merge(to_merge);
+    linked1->print();
+    to_merge.push_back(1);
+    to_merge.push_front(2);
+    to_merge.print();
+    linked1->pop_back();
+    linked1->print();
+
+    cout << "Size: " << linked1->size() << endl;
+    cout << "Front: " << linked1->front() << endl;
+    cout << "Back: " << linked1->back() << endl;
+    linked1->pop_front();
+    linked1->print();
+    cout << "Size: " << linked1->size() << endl;
+    cout << "Front: " << linked1->front() << endl;
+    cout << "Back: " << linked1->back() << endl;
+
+*/
 
 
     return EXIT_SUCCESS;

@@ -158,21 +158,10 @@ void LinkedList<T>::sort(){
 /*Reverts the elements of the structure*/
 template <typename T>
 void LinkedList<T>::reverse(){
-    Node<T> *next = nullptr;
-    auto current = this->head;
-
-    do {
-        next = current->next;
-        current->next = current->prev;
-        current->prev = next;
-
-        current = next;
-
-    } while (current != nullptr);
-
-    current = this->head;
-    this->head = this->tail;
-    this->tail = current;
+    if(this->nodes){
+        this->head->reverseLinked(nullptr);
+        swap(this->head,this->tail);
+    }
 }
 /**/
 template <typename T>

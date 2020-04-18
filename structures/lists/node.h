@@ -1,6 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include <algorithm>//swap
 template <typename T>
 struct Node {
     T data;

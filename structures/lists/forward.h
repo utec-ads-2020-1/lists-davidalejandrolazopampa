@@ -6,7 +6,7 @@
 
 // TODO: Implement all methods
 template <typename T>
-class ForwardList : public List<T>, public error_code {
+class ForwardList : public List<T>{
     public:
         ForwardList() : List<T>() {}
 

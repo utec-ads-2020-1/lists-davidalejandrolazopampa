@@ -18,6 +18,7 @@ class ForwardIterator {
         ///////////////////////
 
 };
+
 //////////Iniciando//////////
 template <typename T>
 ForwardIterator<T>::ForwardIterator():current(){}
