@@ -1,7 +1,8 @@
 #include "tester.h"
 
 void Tester::execute() {
-    Collection collections[] = { forward_list, linked_list, circular_list };
+    Collection collections[] = { linked_list };
+    //Collection collections[] = { forward_list, linked_list, circular_list };
     size_t numberOfCollections = sizeof(collections) / sizeof(collections[0]);
 
     for (int i = 0; i < numberOfCollections; i++) {
@@ -64,8 +65,11 @@ void Tester::testList(Collection collection) {
     list->reverse();
     cout << "Completed: 5" << list->name() << endl;
     ASSERT(list->back() == elements[1], "The " + list->name() + " reverse is not working");
+    cout << "Completed: 5.1" << list->name() << endl;
     ASSERT(list->front() == elements[4], "The " + list->name() + " reverse is not working");
+    cout << "Completed: 5.2" << list->name() << endl;
     ASSERT((*list)[1] == elements[3], "The " + list->name() + " reverse is not working");
+    cout << "Completed: 5.3" << list->name() << endl;//Aqui esta el error
     ASSERT((*list)[2] == elements[2], "The " + list->name() + " reverse is not working");
     cout << "Completed 6: " << list->name() << endl;
     list->push_back(elements[6]);
