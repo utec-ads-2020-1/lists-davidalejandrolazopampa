@@ -112,7 +112,7 @@ class LinkedList : public List<T> {
         /*If the data structure is empty*/
         template <typename T>
         bool LinkedList<T>::empty(){
-
+            return !this->nodes;
         }
         /*The current count of elements*/
         template <typename T>
