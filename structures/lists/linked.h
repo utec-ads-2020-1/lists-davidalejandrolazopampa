@@ -61,6 +61,8 @@ template <typename T>
 void LinkedList<T>::push_front(T value){
     Node<T>* newNode=new Node<T>;
     newNode->data=value;
+    newNode->next= nullptr;
+    newNode->prev= nullptr;
     if(!this->head){
         newNode->next=this->head;
         this->head->prev=newNode;
@@ -75,6 +77,7 @@ void LinkedList<T>::push_back(T value){
     Node<T>* newNode=new Node<T>;
     newNode->data=value;
     newNode->next= nullptr;
+    newNode->prev= nullptr;
     if(this->nodes){
         newNode->prev=this->tail;
         this->tail->next=newNode;
