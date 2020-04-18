@@ -1,9 +1,7 @@
 #include <iostream>
-//#include <lists/linked.h>
 #include "test/tester.h"
 //#include "structures/stack.h"
 //#include "structures/lists/forward.h"
-#include "structures/lists/linked.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -14,17 +12,12 @@ int main(int argc, char *argv[]) {
     //auto *stack2 = new stack<int>();
     cout<<endl;
 
-    //Tester::execute();
-
+    Tester::execute();
+    /*
     //-FORWARD test
-/*
     auto* forward1 = new ForwardList<int>();
-    cout << "Front: " << forward1->front() << endl<< endl<< endl;
-
-
     forward1->push_back(3);
     forward1->push_back(6);
-    forward1->push_front(1000);
     forward1->push_back(10);
     forward1->push_back(11);
     forward1->print();
@@ -38,9 +31,8 @@ int main(int argc, char *argv[]) {
     cout << "Size: " << forward1->size() << endl;
     cout << "Front: " << forward1->front() << endl;
     cout << "Back: " << forward1->back() << endl;
+    //cout << "Index[2]: " <<forward1[3]<<endl;
 
-    cout << "Index[2]: " <<forward1->operator[](2)<<endl;
-    cout <<"david"<<endl;
     forward1->clear();
     forward1->push_back(2);
     forward1->push_back(9);
@@ -68,24 +60,9 @@ int main(int argc, char *argv[]) {
     cout << "Front: " << forward1->front() << endl;
     cout << "Back: " << forward1->back() << endl;
 */
-    //-LINKED test
 
-    auto * linked1 = new LinkedList<int>();
-    linked1->push_back(0);
-    linked1->push_back(1);
-    linked1->push_back(2);
-    linked1->push_back(3);
-    linked1->push_back(4);
-    linked1->push_back(5);
 
-    linked1->print();
-    linked1->push_front(1);
-    linked1->print();
-    linked1->pop_front();
-    linked1->print();
-    linked1->pop_back();
-    linked1->print();
-    linked1->push_back(6);linked1->push_back(6);linked1->push_back(6);
-    linked1->print();
+
+
     return EXIT_SUCCESS;
 }

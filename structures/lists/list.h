@@ -1,7 +1,8 @@
 #ifndef LIST_H
 #define LIST_H
-//#include <algorithm>
+
 #include "node.h"
+
 // TODO: Implement all methods
 template <typename T>
 class List {
@@ -27,11 +28,10 @@ class List {
         virtual void sort() = 0;
         virtual void reverse() = 0;
         virtual string name() = 0;
-        //virtual void print();
+        virtual void print();
 
 
 };
-/*
 template<typename T>
 void List<T>::print(){
     if(empty())
@@ -45,6 +45,5 @@ void List<T>::print(){
         cout << endl;
     }
 }
-*/
 
 #endif

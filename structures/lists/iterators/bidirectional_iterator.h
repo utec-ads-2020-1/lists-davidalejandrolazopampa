@@ -60,6 +60,5 @@ class BidirectionalIterator {
         template <typename T>
         T BidirectionalIterator<T>::operator*(){
             if(this->current){return this->current->data;}
-            else{throw new out_of_range("Empty List");}
         }
 #endif
