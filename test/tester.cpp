@@ -90,7 +90,6 @@ bool Tester::isSorted(List<T>* list) {
             return false;
         }
     }
-
     return true;
 }
 
@@ -126,7 +125,7 @@ void Tester::testForward(ForwardList<T>* list) {
     ++it;
     ASSERT(it != list->end(), "The " + list->name() + " iterator is not working");
 }
-/*
+
 template <typename T>
 void Tester::testLinked(LinkedList<T>* list) {
     Mocker mocker;
@@ -152,7 +151,7 @@ void Tester::testLinked(LinkedList<T>* list) {
     ASSERT(*it == elements[2], "The " + list->name() + " iterator is not working");
     ASSERT(it != list->end(), "The " + list->name() + " iterator is not working");
 }
-
+/*
 template <typename T>
 void Tester::testCircularLinked(CircularLinkedList<T>* list) {
     Mocker mocker;
