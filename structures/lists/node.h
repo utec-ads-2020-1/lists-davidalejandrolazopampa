@@ -1,6 +1,6 @@
 #ifndef NODE_H
 #define NODE_H
-
+using namespace std;
 template <typename T>
 struct Node {
     T data;
@@ -14,9 +14,9 @@ struct Node {
         delete this;
     }
     /**/
-    void reverseF(Node<T>* node){
+    void reverseForward(Node<T>* node){
         if(next->next!=node)
-            next->reverseF(node);
+            next->reverseForward(node);
         next->next=this;
     }
     void reverseCircular(Node<T>* node){

@@ -1,8 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
-
+#include <algorithm>
 #include "node.h"
-
 // TODO: Implement all methods
 template <typename T>
 class List {
@@ -45,5 +44,6 @@ void List<T>::print(){
         cout << endl;
     }
 }
+
 
 #endif

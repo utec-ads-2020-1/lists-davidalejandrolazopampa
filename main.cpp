@@ -13,11 +13,16 @@ int main(int argc, char *argv[]) {
     cout<<endl;
 
     Tester::execute();
-    /*
+
     //-FORWARD test
+/*
     auto* forward1 = new ForwardList<int>();
+    cout << "Front: " << forward1->front() << endl<< endl<< endl;
+
+
     forward1->push_back(3);
     forward1->push_back(6);
+    forward1->push_front(1000);
     forward1->push_back(10);
     forward1->push_back(11);
     forward1->print();
@@ -31,8 +36,9 @@ int main(int argc, char *argv[]) {
     cout << "Size: " << forward1->size() << endl;
     cout << "Front: " << forward1->front() << endl;
     cout << "Back: " << forward1->back() << endl;
-    //cout << "Index[2]: " <<forward1[3]<<endl;
 
+    cout << "Index[2]: " <<forward1->operator[](2)<<endl;
+    cout <<"david"<<endl;
     forward1->clear();
     forward1->push_back(2);
     forward1->push_back(9);
@@ -60,7 +66,7 @@ int main(int argc, char *argv[]) {
     cout << "Front: " << forward1->front() << endl;
     cout << "Back: " << forward1->back() << endl;
 */
-
+    //-LINKED test
 
 
 

@@ -9,7 +9,6 @@ template <typename T>
 class ForwardList : public List<T>, public error_code {
     public:
         ForwardList() : List<T>() {}
-
         T front();
         T back();
         void push_front(T);
@@ -41,8 +40,6 @@ class ForwardList : public List<T>, public error_code {
          * or whether the value_type supports move-construction or not.
         */
         void merge(ForwardList<T>&);
-
-
 };
         //////////Iniciando//////////
         /*Returns the top element*/
@@ -137,44 +134,32 @@ class ForwardList : public List<T>, public error_code {
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
         void ForwardList<T>::sort(){
-/*
-            int x=1;
-            T *tempArray =new T[this->nodes];
-            auto* aux = this->head->next;
-            tempArray[0] = aux->data;
-            while(aux->next != nullptr){
-                aux = aux->next;
-                tempArray[x]=aux->data;
-                x++;
+            int size = this->nodes;
+            int newarray[size];
+            Node<T>*actual = this->head;
+            for (int i = 0; i <size ; ++i) {
+                newarray[i] = actual->data;
+                actual = actual->next;
             }
-            sort(tempArray,tempArray+this->nodes);
-            clear();
-            x=0;
-            while (x != size()){
-                push_back(tempArray[x]);
-                x++;
-            }*/
-
-            auto temp = this->head;
-            T max;
-
-            for(int i = 0; i < this->nodes; ++i){
-                while(temp->next != nullptr){
-                    if(temp->data > temp->next->data){
-                        max = temp->data;
-                        temp->data = temp->next->data;
-                        temp->next->data = max;
-                    }
-                    temp = temp->next;
+            for (int i = (size)/2; i >0 ; i /=2) {
+                for (int j = i; j < size; j++) {
+                    int temp = newarray[j];
+                    int k;
+                    for (int k = j; k >=i  && newarray[k-i]>temp; k -=i) {newarray[k] = newarray[k-i];}
+                    newarray[k] = temp;
                 }
-                temp = this->head;
+            }
+            actual = this->head;
+            for (int l = 0; l < size ; l++) {
+                actual->data = newarray[l];
+                actual = actual->next;
             }
         }
         /*Reverts the elements of the structure*/
         template <typename T>
         void ForwardList<T>::reverse(){
             if(this->nodes){
-                this->head->reverseF(nullptr);
+                this->head->reverseForward(nullptr);
                 swap(this->head,this->tail);
             }
             else{this->tail->next= nullptr;}
