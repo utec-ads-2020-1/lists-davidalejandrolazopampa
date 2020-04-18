@@ -112,7 +112,7 @@ class LinkedList : public List<T> {
         /*If the data structure is empty*/
         template <typename T>
         bool LinkedList<T>::empty(){
-            return !this->nodes;
+            return !this->head;
         }
         /*The current count of elements*/
         template <typename T>
@@ -122,7 +122,10 @@ class LinkedList : public List<T> {
         /*Remove all the elements*/
         template <typename T>
         void LinkedList<T>::clear(){
-
+            this->head->killSelf();
+            this->head=nullptr;
+            this->tail= nullptr;
+            this->nodes=0;
         }
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
