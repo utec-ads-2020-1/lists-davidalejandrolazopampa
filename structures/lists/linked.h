@@ -60,7 +60,15 @@ class LinkedList : public List<T> {
         /*Adds an element to the front*/
         template <typename T>
         void LinkedList<T>::push_front(T value){
-
+            Node<T>* newNode=new Node<T>;
+            newNode->data=value;
+            if(!this->head){
+                newNode->next=this->head;
+                this->head->prev=newNode;
+            }
+            else{this->tail=newNode;}
+            this->head=newNode;
+            ++this->nodes;
         }
         /*Adds an element to the back*/
         template <typename T>
