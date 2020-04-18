@@ -91,7 +91,7 @@ class LinkedList : public List<T> {
                 Node<T>* newNode=this->head->next;
                 delete this->head;
                 this->head= nullptr;
-                if(this->nodes==1){this->tail=nullptr}
+                if(this->nodes==1){this->tail=nullptr;}
                 else{
                     newNode->prev=nullptr;
                     this->head=newNode;
@@ -102,12 +102,21 @@ class LinkedList : public List<T> {
         /*Removes the back element, and updates a new back if necessary*/
         template <typename T>
         void LinkedList<T>::pop_back(){
-
+            if(this->nodes){
+                Node<T>* newNode=this->tail->prev;
+                delete this->tail;
+                if(this->nodes==1){this->head=nullptr;}
+                else{
+                    newNode->next=nullptr;
+                    this->tail=newNode;
+                }
+                --this->nodes;
+            }
         }
         /*Returns an element in a certain position*/
         template <typename T>
         T LinkedList<T>::operator[](int value) {
-
+            
         }
         /*If the data structure is empty*/
         template <typename T>
