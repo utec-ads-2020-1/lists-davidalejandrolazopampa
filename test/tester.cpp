@@ -70,7 +70,7 @@ void Tester::testList(Collection collection) {
     cout << "Completed: 5.2" << list->name() << endl;
     ASSERT((*list)[1] == elements[3], "The " + list->name() + " reverse is not working");
     cout << "Completed: 5.3" << list->name() << endl;
-    ASSERT((*list)[2] == elements[2], "The " + list->name() + " reverse is not working");//Aqui esta el error
+    ASSERT((*list)[2] == elements[2], "The " + list->name() + " reverse is not working");
     cout << "Completed 6: " << list->name() << endl;
     list->push_back(elements[6]);
     list->push_back(elements[7]);
@@ -82,9 +82,13 @@ void Tester::testList(Collection collection) {
     ASSERT(list->size() == 0, "The " + list->name() + " size or clear is not working");
     ASSERT(list->empty() == true, "The " + list->name() + " empty is not working");
     cout << "Completed: 9" << list->name() << endl;
-    testSpecifics(collection, list);
+
+    testSpecifics(collection, list);//Aqui esta el error
+    cout << "Sera el final"<< endl;
 
     cout << "Completed: " << list->name() << endl;
+
+
 }
 
 template <typename T>

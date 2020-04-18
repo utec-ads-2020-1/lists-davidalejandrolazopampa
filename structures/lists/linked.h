@@ -156,9 +156,17 @@ void LinkedList<T>::sort(){
 /*Reverts the elements of the structure*/
 template <typename T>
 void LinkedList<T>::reverse(){
-    if(this->nodes){
-        this->head->reverseLinked(nullptr);
-        swap(this->head,this->tail);
+    int size = this->nodes;
+    int *array= new int [size];
+    Node<T>*it = this->head;
+    for (int i = 0; i <size ; ++i) {
+        array[i] = it->data;
+        it = it->next;
+    }
+    it = this->head;
+    for (int j = size-1; j >=0 ; j--) {
+        it->data = array[j];
+        it = it->next;
     }
 }
 /**/

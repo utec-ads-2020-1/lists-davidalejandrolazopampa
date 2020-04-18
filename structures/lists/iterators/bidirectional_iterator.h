@@ -47,6 +47,7 @@ class BidirectionalIterator {
         BidirectionalIterator<T> BidirectionalIterator<T>::operator++() {
             //if (this->current == nullptr){throw out_of_range("Invalid Operation!");}
             //return this->current = this->current->next;
+
             if(this->current){
                 this->current = this->current->prev;
 
@@ -58,6 +59,7 @@ class BidirectionalIterator {
         BidirectionalIterator<T> BidirectionalIterator<T>::operator--(){
             //if(this->current == nullptr){throw out_of_range("Invalid Operation!");}
             //return this->current = this->current->prev;
+
             if(this->current){
                 this->current = this->current->prev;
             }
