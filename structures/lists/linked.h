@@ -117,7 +117,7 @@ class LinkedList : public List<T> {
         /*The current count of elements*/
         template <typename T>
         int LinkedList<T>::size(){
-
+            return this->nodes;
         }
         /*Remove all the elements*/
         template <typename T>
