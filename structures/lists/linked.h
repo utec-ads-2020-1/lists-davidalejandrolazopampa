@@ -48,14 +48,14 @@ class LinkedList : public List<T> {
         /*Returns the top element*/
         template <typename T>
         T LinkedList<T>::front(){
-            if(this->head){ return this->head->data}
-            else{throw new out_of_range("Empty list")}
+            if(this->head){ return this->head->data;}
+            else{throw new out_of_range("Empty list");}
         }
         /*Returns the back element*/
         template <typename T>
         T LinkedList<T>::back(){
-            if(!empty()){ return this->tail->data}
-            else{throw new out_of_range("Empty list")}
+            if(!empty()){ return this->tail->data;}
+            else{throw new out_of_range("Empty list");}
         }
         /*Adds an element to the front*/
         template <typename T>
@@ -73,12 +73,31 @@ class LinkedList : public List<T> {
         /*Adds an element to the back*/
         template <typename T>
         void LinkedList<T>::push_back(T value){
-
+            Node<T>* newNode=new Node<T>;
+            newNode->data=value;
+            //newNode->next= nullptr;
+            if(this->nodes){
+                newNode->prev=this->tail;
+                this->tail->next=newNode;
+            }
+            else{this->head=newNode;}
+            this->tail=newNode;
+            ++this->nodes;
         }
         /*Removes the front element, and updates a new front if necessary*/
         template <typename T>
         void LinkedList<T>::pop_front(){
-
+            if(this->nodes){
+                Node<T>* newNode=this->head->next;
+                delete this->head;
+                this->head= nullptr;
+                if(this->nodes==1){this->tail=nullptr}
+                else{
+                    newNode->prev=nullptr;
+                    this->head=newNode;
+                }
+                --this->newNodes;
+            }
         }
         /*Removes the back element, and updates a new back if necessary*/
         template <typename T>
