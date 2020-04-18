@@ -129,8 +129,6 @@ bool LinkedList<T>::empty(){
 /*The current count of elements*/
 template <typename T>
 int LinkedList<T>::size(){
-    this->nodes = 0;
-    for (auto pNode = this->head; pNode != nullptr ; pNode = pNode->next) {++this->nodes;}
     return this->nodes;
 }
 /*Remove all the elements*/
