@@ -6,7 +6,7 @@ You have to implement all the constructors & methods of the different structures
 * [back] - Returns the back element.
 * [push] - Adds an element.
 * [push_front] - Adds an element to the front.
-* [push_back] - Adds an elemento to the back.
+* [push_back] - Adds an element to the back.
 * [pop] - Removes an element.
 * [pop_front] - Removes the front element, and updates a new front if necessary.
 * [pop_back] - Removes the back element, and updates a new back if necessary.

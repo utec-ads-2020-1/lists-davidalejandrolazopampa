@@ -132,7 +132,6 @@ void Tester::testLinked(LinkedList<T>* list) {
     Mocker mocker;
     unsigned int size = mocker.generateRandomInt(5);
     T* elements = mocker.generateRandomArray<T>(size);
-
     LinkedList<T>* list1 = new LinkedList<T>;
     list1->push_back(elements[0]);
     list1->push_back(elements[1]);
