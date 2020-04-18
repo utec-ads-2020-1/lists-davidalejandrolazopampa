@@ -90,7 +90,7 @@ class LinkedList : public List<T> {
             if(this->nodes){
                 Node<T>* newNode=this->head->next;
                 delete this->head;
-                //this->head= nullptr;
+                this->head= nullptr;
                 if(this->nodes==1){this->tail=nullptr;}
                 else{
                     newNode->prev=nullptr;
