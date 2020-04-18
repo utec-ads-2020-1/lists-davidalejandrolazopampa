@@ -116,7 +116,12 @@ class LinkedList : public List<T> {
         /*Returns an element in a certain position*/
         template <typename T>
         T LinkedList<T>::operator[](int value) {
-            
+            if(index>=this->nodes){throw new out_of_range("Out of range");}
+            else{
+                Node <T> *temp = this->head;
+                for(int i = 0; i < index; i++){temp = temp->next;}
+                return temp->data;
+            }
         }
         /*If the data structure is empty*/
         template <typename T>

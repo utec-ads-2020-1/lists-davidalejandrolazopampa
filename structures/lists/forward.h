@@ -108,7 +108,7 @@ class ForwardList : public List<T>, public error_code {
         T ForwardList<T>::operator[](int index){
             if(index >= 0 && index >= this->nodes){throw new out_of_range("Out of range");}
             else{
-                auto*temp = this->head;
+                Node <T> *temp = this->head;
                 for(int i = 0; i < index; i++){temp = temp->next;}
                 return temp->data;
             }
