@@ -42,20 +42,19 @@ public:
     */
     void merge(LinkedList<T>&);
 
-
 };
 //////////Iniciando//////////
 /*Returns the top element*/
 template <typename T>
 T LinkedList<T>::front(){
     if(!empty()){return this->head->data;}
-    else{throw out_of_range("The Linked is empty");}
+    else{throw new out_of_range("The Linked is empty");}
 }
 /*Returns the back element*/
 template <typename T>
 T LinkedList<T>::back(){
     if(!empty()){ return this->tail->data;}
-    else{throw out_of_range("The Linked is empty");}
+    else{throw new out_of_range("The Linked is empty");}
 }
 /*Adds an element to the front*/
 template <typename T>
@@ -116,21 +115,22 @@ void LinkedList<T>::pop_back(){
 /*Returns an element in a certain position*/
 template <typename T>
 T LinkedList<T>::operator[](int index) {
-    if(index>=this->nodes){throw new out_of_range("Out of range");}
-    else{
-        Node <T> *temp = this->head;
-        for(int i = 0; i < index; i++){temp = temp->next;}
-        return temp->data;
-    }
+    if ( index < 0 ) throw new out_of_range("Index should zero");
+    if ( index > size() - 1 ) throw new out_of_range("Index is bigger in the list");
+    auto pNode = this->head;
+    while (index--) {pNode = pNode->next;}
+    return pNode->data;
 }
 /*If the data structure is empty*/
 template <typename T>
 bool LinkedList<T>::empty(){
-    return !this->head;
+    return this->head == nullptr && this->tail == nullptr;
 }
 /*The current count of elements*/
 template <typename T>
 int LinkedList<T>::size(){
+    this->nodes = 0;
+    for (auto pNode = this->head; pNode != nullptr ; pNode = pNode->next) {++this->nodes;}
     return this->nodes;
 }
 /*Remove all the elements*/
@@ -158,10 +158,21 @@ void LinkedList<T>::sort(){
 /*Reverts the elements of the structure*/
 template <typename T>
 void LinkedList<T>::reverse(){
-    if(this->nodes){
-        this->head->reverseLinked(nullptr);
-        swap(this->head,this->tail);
-    }
+    Node<T> *next = nullptr;
+    auto current = this->head;
+
+    do {
+        next = current->next;
+        current->next = current->prev;
+        current->prev = next;
+
+        current = next;
+
+    } while (current != nullptr);
+
+    current = this->head;
+    this->head = this->tail;
+    this->tail = current;
 }
 /**/
 template <typename T>

@@ -42,23 +42,25 @@ class BidirectionalIterator {
         /*Returns if the iterator is different from another iterator*/
         template <typename T>
         bool BidirectionalIterator<T>::operator!=(BidirectionalIterator<T> Nodes){
-            return this->current !=   Nodes.current;
+            return (this->current != Nodes.current);
         }
         /*Advance one position*/
         template <typename T>
         BidirectionalIterator<T> BidirectionalIterator<T>::operator++() {
-            if(this->current){this->current=this->current->next;}
-            return *this;
+            if (this->current == nullptr){throw runtime_error("Invalid Operation!");}
+            return this->current = this->current->next;
         }
         /*Goes back one position*/
         template <typename T>
         BidirectionalIterator<T> BidirectionalIterator<T>::operator--(){
-            if(this->current){this->current=this->current->prev;}
-            return *this;
+            if(this->current == nullptr){throw runtime_error("Invalid Operation!");}
+            return this->current = this->current->prev;
         }
         /*Returns the content of the iterator*/
         template <typename T>
         T BidirectionalIterator<T>::operator*(){
-            if(this->current){return this->current->data;}
+            if(this->current == nullptr){throw runtime_error("Invalid Operation!");}
+            return this->current->data;
         }
+
 #endif
