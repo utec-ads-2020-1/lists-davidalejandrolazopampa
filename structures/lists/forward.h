@@ -158,11 +158,13 @@ class ForwardList : public List<T>, public error_code {
         /*Reverts the elements of the structure*/
         template <typename T>
         void ForwardList<T>::reverse(){
+            /*
             if(this->nodes){
                 this->head->reverseForward(nullptr);
                 swap(this->head,this->tail);
             }
             else{this->tail->next= nullptr;}
+             */
         }
 
         template <typename T>

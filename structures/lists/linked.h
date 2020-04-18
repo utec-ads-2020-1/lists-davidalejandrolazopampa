@@ -48,14 +48,14 @@ class LinkedList : public List<T> {
         /*Returns the top element*/
         template <typename T>
         T LinkedList<T>::front(){
-            if(this->head){ return this->head->data;}
-            else{throw new out_of_range("The Linked is empty");}
+            if(!empty()){return this->head->data;}
+            else{throw out_of_range("The Linked is empty");}
         }
         /*Returns the back element*/
         template <typename T>
         T LinkedList<T>::back(){
             if(!empty()){ return this->tail->data;}
-            else{throw new out_of_range("The Linked is empty");}
+            else{throw out_of_range("The Linked is empty");}
         }
         /*Adds an element to the front*/
         template <typename T>
