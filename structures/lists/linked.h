@@ -144,12 +144,32 @@ class LinkedList : public List<T> {
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
         void LinkedList<T>::sort(){
-
+            int size = this->nodes;
+            int newarray[size];
+            Node<T>*actual = this->head;
+            for (int i = 0; i <size ; ++i) {
+                newarray[i] = actual->data;
+                actual = actual->next;
+            }
+            for (int i = (size)/2; i >0 ; i /=2) {
+                for (int j = i; j < size; j++) {
+                    int temp = newarray[j];
+                    int k;
+                    for (int k = j; k >=i  && newarray[k-i]>temp; k -=i) {newarray[k] = newarray[k-i];}
+                    newarray[k] = temp;
+                }
+            }
+            actual = this->head;
+            for (int l = 0; l < size ; l++) {
+                actual->data = newarray[l];
+                actual = actual->next;
+            }
         }
         /*Reverts the elements of the structure*/
         template <typename T>
         void LinkedList<T>::reverse(){
-
+            if(this->nodes){
+                this->head->reverseForward(nullptr);swap(this->head,this->tail);}
         }
         /**/
         template <typename T>
