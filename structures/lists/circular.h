@@ -134,7 +134,6 @@ class CircularLinkedList : public List<T> {
         template<typename T>
         bool CircularLinkedList<T>::empty(){
             return !this->nodes;
-            //return this->head == nullptr && this->tail == nullptr;
         }
         /*The current count of elements*/
         template<typename T>
@@ -151,27 +150,36 @@ class CircularLinkedList : public List<T> {
         /*Sorts the elements, you can use any sorting algorithm*/
         template<typename T>
         void CircularLinkedList<T>::sort(){
-            Node<T>* temp = this->head;
+            Node<T>* newNode = this->head;
             int size = this->nodes;
-            T* elements = new T[size];
+            T* vector = new T[size];
 
             for(int i  = 0; i < size; i++){
-                elements[i] = temp->data;
-                temp = temp->next;
+                vector[i] = newNode->data;
+                newNode = newNode->next;
             }
-
-            std::sort(elements,elements+size);
-
-            temp = this->head;
+            std::sort(vector,vector+size);
+            newNode = this->head;
             for(int i  = 0; i <size; i++){
-                temp->data = elements[i];
-                temp = temp->next;
+                newNode->data = vector[i];
+                newNode = newNode->next;
             }
         }
         /*Reverts the elements of the structure*/
         template<typename T>
         void CircularLinkedList<T>::reverse(){
-
+            Node<T>* newNode = this->head;
+            int size=this->nodes;
+            T * arr  = new T[size];
+            for( int i = 0; i < size; i ++){
+                arr[i] = newNode->data;
+                newNode =newNode->next;
+            }
+            newNode = this->head;
+            for(int i = size-1 ; i >= 0 ; i --){
+                newNode->data = arr[i];
+                newNode = newNode->next;
+            }
         }
         /**/
         template<typename T>
@@ -186,10 +194,19 @@ class CircularLinkedList : public List<T> {
         /*Transfers all elements*/
         template<typename T>
         void CircularLinkedList<T>::merge(CircularLinkedList<T> &list){
-            Node<T>* node=list.head;
-            while(node){
-                push_back(node->data);
-                node=node->next;
+            if(list.empty()){}
+            else{
+                if(empty()){
+                    this->head=list.head;
+                }
+                else{
+                    this->tail->next=list.head;
+                    list.head->prev=this->tail;
+                }
+                this->tail = list.tail;
             }
+            this->nodes+=list.size();
+            this->tail->next = this->head;
+            this->head->prev = this->tail;
         }
 #endif
