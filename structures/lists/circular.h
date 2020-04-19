@@ -82,9 +82,7 @@ class CircularLinkedList : public List<T> {
         }
         /*If the data structure is empty*/
         template<typename T>
-        bool CircularLinkedList<T>::empty(){
-
-        }
+        bool CircularLinkedList<T>::empty(){return !this->nodes;}
         /*The current count of elements*/
         template<typename T>
         int CircularLinkedList<T>::size(){return this->nodes;}
