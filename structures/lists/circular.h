@@ -83,7 +83,18 @@ class CircularLinkedList : public List<T> {
         /*Removes the front element, and updates a new front if necessary*/
         template<typename T>
         void CircularLinkedList<T>::pop_front(){
-
+            if(this->nodes){
+                Node<T>* newNodes=this->head->next;
+                delete this->head;
+                this->head= nullptr;
+                if(this->nodes==1){this->tail= nullptr;}
+                else{
+                    newNodes->prev=this->tail;
+                    this->tail->next=newNodes;
+                    this->head=newNodes;
+                }
+                --this->nodes;
+            }
         }
         /*Removes the back element, and updates a new back if necessary*/
         template<typename T>
@@ -93,14 +104,14 @@ class CircularLinkedList : public List<T> {
         /*Returns an element in a certain position*/
         template<typename T>
         T CircularLinkedList<T>::operator[](int index){
-            /*
-            if(index<0){}//throw out_of_range("Index empty");}
             Node<T>* newNode = this->head;
+            if(index<0){throw out_of_range("Index empty");}
             for(int i=0;i<=index;++i){
+
                 if(i == index){ return newNode->data;}
                 else{newNode = newNode->next;}
-            }*/
-
+            }
+/*
             if(!empty() || index > this->nodes) {
                 int half = (this->nodes) / 2;
                 if (index < half) {
@@ -120,7 +131,7 @@ class CircularLinkedList : public List<T> {
                     }
                     return temp->data;
                 }
-            } //else {throw out_of_range("Not Index in the position");}
+            } else {throw out_of_range("Not Index in the position");}*/
         }
         /*If the data structure is empty*/
         template<typename T>
