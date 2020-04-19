@@ -53,7 +53,9 @@ class CircularLinkedList : public List<T> {
         T CircularLinkedList<T>::back(){return this->tail->data;}
         /*Adds an element to the front*/
         template<typename T>
-        void CircularLinkedList<T>::push_front(T value){}
+        void CircularLinkedList<T>::push_front(T value){
+
+        }
         /*Adds an element to the back*/
         template<typename T>
         void CircularLinkedList<T>::push_back(T value){
@@ -111,33 +113,12 @@ class CircularLinkedList : public List<T> {
         template<typename T>
         T CircularLinkedList<T>::operator[](int index){
             Node<T>* newNode = this->head;
-            if(index<0){throw out_of_range("Index empty");}
+            if(index<0){throw out_of_range("Not Index in the position");}
             for(int i=0;i<=index;++i){
 
                 if(i == index){ return newNode->data;}
                 else{newNode = newNode->next;}
             }
-/*
-            if(!empty() || index > this->nodes) {
-                int half = (this->nodes) / 2;
-                if (index < half) {
-                    int i = 0;
-                    auto* temp = this->head;
-                    while (i != index) {
-                        temp = temp->next;
-                        ++i;
-                    }
-                    return temp->data;
-                } else {
-                    int i = this->nodes - 1;
-                    auto* temp = this->head->prev;
-                    while (i != index) {
-                        temp = temp->prev;
-                        --i;
-                    }
-                    return temp->data;
-                }
-            } else {throw out_of_range("Not Index in the position");}*/
         }
         /*If the data structure is empty*/
         template<typename T>
