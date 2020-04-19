@@ -55,9 +55,7 @@ class CircularLinkedList : public List<T> {
         }
         /*Adds an element to the front*/
         template<typename T>
-        void CircularLinkedList<T>::push_front(T value){
-
-        }
+        void CircularLinkedList<T>::push_front(T value){return this->tail->data;}
         /*Adds an element to the back*/
         template<typename T>
         void CircularLinkedList<T>::push_back(T value){
