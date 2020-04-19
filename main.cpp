@@ -1,21 +1,19 @@
 #include <iostream>
 #include "test/tester.h"
-//#include "structures/stack.h"
-//#include "structures/lists/forward.h"
-//#include "structures/lists/linked.h"
+#include "structures/stack.h"
+
+#include "structures/lists/forward.h"
+#include "structures/lists/linked.h"
+#include "structures/lists/circular.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
     cout << "===========================================================" << endl;
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
-    //Prueba Stack
-    //auto *stack2 = new stack<int>();
-    cout<<endl;
-
-    Tester::execute();
-    /*
+    //Tester::execute();
     //-FORWARD test
+    /*
     auto* forward1 = new ForwardList<int>();
     forward1->push_back(3);
     forward1->push_back(6);
@@ -61,10 +59,8 @@ int main(int argc, char *argv[]) {
     cout << "Front: " << forward1->front() << endl;
     cout << "Back: " << forward1->back() << endl;
 */
-
-
-//-LINKED test
-/*
+    //-LINKED test
+    /*
     auto* linked1 = new LinkedList<int>();
     linked1->push_back(3);
     linked1->push_back(5);
@@ -107,7 +103,9 @@ int main(int argc, char *argv[]) {
     cout << "Back: " << linked1->back() << endl;
 
 */
-
-
+    cout<<"Prueba Stack"<<endl;
+    auto *stack2 = new stack<int>();
+    cout<<endl;
+    cout<<"Prueba Queue"<<endl;
     return EXIT_SUCCESS;
 }
