@@ -145,15 +145,19 @@ void LinkedList<T>::clear(){
 /*Sorts the elements, you can use any sorting algorithm*/
 template <typename T>
 void LinkedList<T>::sort(){
-    auto newNode = this->head;T max;
-    for(int i = 0; i < this->nodes; ++i){
-        while(newNode->next != nullptr){
-            if(newNode->data > newNode->next->data){
-                max = newNode->data;newNode->data = newNode->next->data;newNode->next->data = max;
-            }
-            newNode = newNode->next;
-        }
-        newNode = this->head;
+    Node<T>* newNode = this->head;
+    int size = this->nodes;
+    T* vector = new T[size];
+
+    for(int i  = 0; i < size; i++){
+        vector[i] = newNode->data;
+        newNode = newNode->next;
+    }
+    std::sort(vector,vector+size);
+    newNode = this->head;
+    for(int i  = 0; i <size; i++){
+        newNode->data = vector[i];
+        newNode = newNode->next;
     }
 }
 /*Reverts the elements of the structure*/

@@ -151,21 +151,19 @@ class CircularLinkedList : public List<T> {
         /*Sorts the elements, you can use any sorting algorithm*/
         template<typename T>
         void CircularLinkedList<T>::sort(){
-            Node<T>* temp = this->head;
+            Node<T>* newNode = this->head;
             int size = this->nodes;
-            T* elements = new T[size];
+            T* vector = new T[size];
 
             for(int i  = 0; i < size; i++){
-                elements[i] = temp->data;
-                temp = temp->next;
+                vector[i] = newNode->data;
+                newNode = newNode->next;
             }
-
-            std::sort(elements,elements+size);
-
-            temp = this->head;
+            std::sort(vector,vector+size);
+            newNode = this->head;
             for(int i  = 0; i <size; i++){
-                temp->data = elements[i];
-                temp = temp->next;
+                newNode->data = vector[i];
+                newNode = newNode->next;
             }
         }
         /*Reverts the elements of the structure*/
@@ -197,10 +195,15 @@ class CircularLinkedList : public List<T> {
         /*Transfers all elements*/
         template<typename T>
         void CircularLinkedList<T>::merge(CircularLinkedList<T> &list){
-            Node<T>* node=list.head;
-            while(node){
-                push_back(node->data);
-                node=node->next;
+            if (list.head == nullptr) {
+                throw out_of_range("Not merge");
+            } else {
+                Node<T> *newNode = list.head->next;
+                this->push_back(list.head->data);
+                while (newNode != list.head) {
+                    this->push_back(newNode->data);
+                    newNode = newNode->next;
+                }
             }
         }
 #endif
