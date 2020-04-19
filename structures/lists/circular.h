@@ -139,7 +139,18 @@ class CircularLinkedList : public List<T> {
         /*Reverts the elements of the structure*/
         template<typename T>
         void CircularLinkedList<T>::reverse(){
-
+            Node<T>* newNode = this->head;
+            int size=this->nodes;
+            T * arr  = new T[size];
+            for( int i = 0; i < size; i ++){
+                arr[i] = newNode->data;
+                newNode =newNode->next;
+            }
+            newNode = this->head;
+            for(int i = size-1 ; i >= 0 ; i --){
+                newNode->data = arr[i];
+                newNode = newNode->next;
+            }
         }
         /**/
         template<typename T>
