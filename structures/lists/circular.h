@@ -56,8 +56,6 @@ class CircularLinkedList : public List<T> {
         void CircularLinkedList<T>::push_front(T value){
             Node<T>* newNode=new Node<T>;
             newNode->data=value;
-            //newNode->next= nullptr;
-            //newNode->prev= nullptr;
             if (!empty()){
                 newNode->prev = this->head->prev;
                 this->head->prev->next = newNode;
@@ -75,8 +73,6 @@ class CircularLinkedList : public List<T> {
         void CircularLinkedList<T>::push_back(T value){
             Node<T>* newNode=new Node<T>;
             newNode->data=value;
-            newNode->next= nullptr;
-            newNode->prev= nullptr;
             if(this->nodes){
                 newNode->next=this->head;
                 newNode->prev=this->tail;
