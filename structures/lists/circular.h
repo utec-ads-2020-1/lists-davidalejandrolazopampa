@@ -50,12 +50,10 @@ class CircularLinkedList : public List<T> {
         T CircularLinkedList<T>::front() {return this->head->data;}
         /*Returns the back element*/
         template<typename T>
-        T CircularLinkedList<T>::back(){
-
-        }
+        T CircularLinkedList<T>::back(){return this->tail->data;}
         /*Adds an element to the front*/
         template<typename T>
-        void CircularLinkedList<T>::push_front(T value){return this->tail->data;}
+        void CircularLinkedList<T>::push_front(T value){}
         /*Adds an element to the back*/
         template<typename T>
         void CircularLinkedList<T>::push_back(T value){
@@ -95,7 +93,19 @@ class CircularLinkedList : public List<T> {
         /*Removes the back element, and updates a new back if necessary*/
         template<typename T>
         void CircularLinkedList<T>::pop_back(){
-
+            if(this->nodes){
+                Node<T>* node=this->tail->prev;
+                delete this->tail;
+                this->tail=nullptr;
+                if(this->nodes==1){
+                    this->head=nullptr;
+                }else{
+                    node->next=this->head;
+                    this->head->prev=node;
+                    this->tail=node;
+                }
+                --this->nodes;
+            }
         }
         /*Returns an element in a certain position*/
         template<typename T>
