@@ -87,9 +87,7 @@ class CircularLinkedList : public List<T> {
         }
         /*The current count of elements*/
         template<typename T>
-        int CircularLinkedList<T>::size(){
-
-        }
+        int CircularLinkedList<T>::size(){return this->nodes;}
         /*Remove all the elements*/
         template<typename T>
         void CircularLinkedList<T>::clear(){
