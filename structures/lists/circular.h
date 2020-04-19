@@ -63,7 +63,19 @@ class CircularLinkedList : public List<T> {
         /*Adds an element to the back*/
         template<typename T>
         void CircularLinkedList<T>::push_back(T value){
-
+            Node<T>* newNode=new Node<T>;
+            if(this->nodes){
+                newNode->next=this->head;
+                newNode->prev=this->tail;
+                this->tail->next=newNode;
+                this->tail=newNode;
+            } else{
+                this->tail=newNode;
+                this->tail->next=newNode;
+                this->head=newNode;
+            }
+            this->head->prev=newNode;
+            ++this->nodes;
         }
         /*Removes the front element, and updates a new front if necessary*/
         template<typename T>
