@@ -47,9 +47,7 @@ class CircularLinkedList : public List<T> {
         //////////Iniciando//////////
         /*Returns the top element*/
         template<typename T>
-        T CircularLinkedList<T>::front() {
-
-        }
+        T CircularLinkedList<T>::front() {return this->head->data;}
         /*Returns the back element*/
         template<typename T>
         T CircularLinkedList<T>::back(){
