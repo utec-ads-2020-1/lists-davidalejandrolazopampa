@@ -81,6 +81,7 @@ void Tester::testList(Collection collection) {
     ASSERT(isSorted(list), "The " + list->name() + " sort is not working");
     cout << "Completed: 8" << list->name() << endl;
     list->clear();
+    cout << "Completed 8.1: Funciona el clear" << list->name() << endl;
     ASSERT(list->size() == 0, "The " + list->name() + " size or clear is not working");
     ASSERT(list->empty() == true, "The " + list->name() + " empty is not working");
     cout << "Completed: 9" << list->name() << endl;

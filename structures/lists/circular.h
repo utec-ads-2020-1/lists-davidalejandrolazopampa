@@ -54,7 +54,21 @@ class CircularLinkedList : public List<T> {
         /*Adds an element to the front*/
         template<typename T>
         void CircularLinkedList<T>::push_front(T value){
-
+            Node<T>* newNode=new Node<T>;
+            newNode->data=value;
+            //newNode->next= nullptr;
+            //newNode->prev= nullptr;
+            if (!empty()){
+                newNode->prev = this->head->prev;
+                this->head->prev->next = newNode;
+                newNode->next = this->head;
+                this->head->prev = newNode;
+                this->head = newNode;
+            } else {
+                this->head = newNode;
+            }
+            newNode->data = value;
+            ++(this->nodes);
         }
         /*Adds an element to the back*/
         template<typename T>
@@ -122,14 +136,21 @@ class CircularLinkedList : public List<T> {
         }
         /*If the data structure is empty*/
         template<typename T>
-        bool CircularLinkedList<T>::empty(){return !this->nodes;}
+        bool CircularLinkedList<T>::empty(){
+            return !this->nodes;
+            //return this->head == nullptr && this->tail == nullptr;
+        }
         /*The current count of elements*/
         template<typename T>
         int CircularLinkedList<T>::size(){return this->nodes;}
         /*Remove all the elements*/
         template<typename T>
         void CircularLinkedList<T>::clear(){
-
+            this->tail->next = nullptr;
+            this->head->killSelf();
+            this->nodes = 0;
+            this->head = nullptr;
+            this->tail = nullptr;
         }
         /*Sorts the elements, you can use any sorting algorithm*/
         template<typename T>
