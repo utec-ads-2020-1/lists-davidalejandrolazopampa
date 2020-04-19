@@ -43,48 +43,49 @@ void Tester::testList(Collection collection) {
 
     ASSERT(list->size() == 0, "The " + list->name() + " size is not working");
     ASSERT(list->empty() == true, "The " + list->name() + " empty is not working");
-    //cout << "Completed 1: " << list->name() << endl;
+    cout << "Completed 1: " << list->name() << endl;
     list->push_back(elements[0]);
     list->push_back(elements[1]);
     ASSERT(list->size() == 2, "The " + list->name() + " push_back or size is not working");
     ASSERT((*list)[1] == elements[1], "The " + list->name() + " operator [] is not working");
-    //cout << "Completed 2: " << list->name() << endl;
+    cout << "Completed 2: " << list->name() << endl;
     list->push_back(elements[2]);
     list->push_back(elements[3]);
+    cout << "Completed 2.1: " << list->name() << endl;
     list->pop_front();
     ASSERT(list->size() == 3, "The " + list->name() + " pop_front is not working");
     ASSERT(list->front() == elements[1], "The " + list->name() + " front is not working");
     ASSERT((*list)[2] == elements[3], "The " + list->name() + " operator [] is not working");
-    //cout << "Completed 3: " << list->name() << endl;
+    cout << "Completed 3: " << list->name() << endl;
     list->push_back(elements[4]);
     list->push_back(elements[5]);
     list->pop_back();
     ASSERT(list->size() == 4, "The " + list->name() + " pop_back is not working");
     ASSERT(list->back() == elements[4], "The " + list->name() + " back is not working");
-    //cout << "Completed 4: " << list->name() << endl;
+    cout << "Completed 4: " << list->name() << endl;
     list->reverse();
-    //cout << "Completed: 5" << list->name() << endl;
+    cout << "Completed: 5" << list->name() << endl;
     ASSERT(list->back() == elements[1], "The " + list->name() + " reverse is not working");
-    //cout << "Completed: 5.1" << list->name() << endl;
+    cout << "Completed: 5.1" << list->name() << endl;
     ASSERT(list->front() == elements[4], "The " + list->name() + " reverse is not working");
-    //cout << "Completed: 5.2" << list->name() << endl;
+    cout << "Completed: 5.2" << list->name() << endl;
     ASSERT((*list)[1] == elements[3], "The " + list->name() + " reverse is not working");
-    //cout << "Completed: 5.3" << list->name() << endl;
+    cout << "Completed: 5.3" << list->name() << endl;
     ASSERT((*list)[2] == elements[2], "The " + list->name() + " reverse is not working");
-    //cout << "Completed 6: " << list->name() << endl;
+    cout << "Completed 6: " << list->name() << endl;
     list->push_back(elements[6]);
     list->push_back(elements[7]);
     list->sort();
-    //cout << "Completed: 7" << list->name() << endl;
+    cout << "Completed: 7" << list->name() << endl;
     ASSERT(isSorted(list), "The " + list->name() + " sort is not working");
-    //cout << "Completed: 8" << list->name() << endl;
+    cout << "Completed: 8" << list->name() << endl;
     list->clear();
     ASSERT(list->size() == 0, "The " + list->name() + " size or clear is not working");
     ASSERT(list->empty() == true, "The " + list->name() + " empty is not working");
-    //cout << "Completed: 9" << list->name() << endl;
+    cout << "Completed: 9" << list->name() << endl;
 
     testSpecifics(collection, list);//Aqui esta el error
-    //cout << "Sera el final"<< endl;
+    cout << "Sera este el fin del hombre araña"<< endl;
 
     cout << "Completed: " << list->name() << endl;
 
