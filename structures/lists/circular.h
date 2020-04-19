@@ -134,7 +134,22 @@ class CircularLinkedList : public List<T> {
         /*Sorts the elements, you can use any sorting algorithm*/
         template<typename T>
         void CircularLinkedList<T>::sort(){
+            Node<T>* temp = this->head;
+            int size = this->nodes;
+            T* elements = new T[size];
 
+            for(int i  = 0; i < size; i++){
+                elements[i] = temp->data;
+                temp = temp->next;
+            }
+
+            std::sort(elements,elements+size);
+
+            temp = this->head;
+            for(int i  = 0; i <size; i++){
+                temp->data = elements[i];
+                temp = temp->next;
+            }
         }
         /*Reverts the elements of the structure*/
         template<typename T>
@@ -155,16 +170,20 @@ class CircularLinkedList : public List<T> {
         /**/
         template<typename T>
         BidirectionalIterator<T> CircularLinkedList<T>::begin(){
-
+            return BidirectionalIterator<T>(this->head);
         }
         /**/
         template<typename T>
         BidirectionalIterator<T> CircularLinkedList<T>::end(){
-
+            return BidirectionalIterator<T>(this->tail->next);
         }
         /*Transfers all elements*/
         template<typename T>
         void CircularLinkedList<T>::merge(CircularLinkedList<T> &list){
-
+            Node<T>* node=list.head;
+            while(node){
+                push_back(node->data);
+                node=node->next;
+            }
         }
 #endif

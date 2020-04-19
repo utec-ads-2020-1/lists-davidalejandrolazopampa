@@ -75,6 +75,7 @@ void Tester::testList(Collection collection) {
     cout << "Completed 6: " << list->name() << endl;
     list->push_back(elements[6]);
     list->push_back(elements[7]);
+    cout << "Completed Iniciando Sort: " << list->name() << endl;
     list->sort();
     cout << "Completed: 7" << list->name() << endl;
     ASSERT(isSorted(list), "The " + list->name() + " sort is not working");
