@@ -137,19 +137,15 @@ class ForwardList : public List<T>{
         /*Sorts the elements, you can use any sorting algorithm*/
         template <typename T>
         void ForwardList<T>::sort(){
-            Node<T>* newNode = this->head;
-            int size = this->nodes;
-            T* vector = new T[size];
-
-            for(int i  = 0; i < size; i++){
-                vector[i] = newNode->data;
-                newNode = newNode->next;
-            }
-            std::sort(vector,vector+size);
-            newNode = this->head;
-            for(int i  = 0; i <size; i++){
-                newNode->data = vector[i];
-                newNode = newNode->next;
+            auto newNode = this->head;T max;
+            for(int i = 0; i < this->nodes; ++i){
+                while(newNode->next != nullptr){
+                    if(newNode->data > newNode->next->data){
+                        max = newNode->data;newNode->data = newNode->next->data;newNode->next->data = max;
+                    }
+                    newNode = newNode->next;
+                }
+                newNode = this->head;
             }
         }
         /*Reverts the elements of the structure*/
@@ -174,7 +170,7 @@ class ForwardList : public List<T>{
         }
         /*Transfers all elements*/
         template <typename T>
-        void ForwardList<T>::merge(ForwardList<T> &list){
+        void ForwardList<T>::merge(ForwardList<T> &list){//para lista independiente
             Node<T> *newNode = list.head;
             while(newNode != nullptr){
                 push_back(newNode->data);

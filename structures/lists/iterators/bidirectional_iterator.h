@@ -25,7 +25,7 @@ class BidirectionalIterator {
 };
         //////////Iniciando//////////
         template <typename T>
-        BidirectionalIterator<T>::BidirectionalIterator(){}
+        BidirectionalIterator<T>::BidirectionalIterator(){current;}
         template <typename T>
         BidirectionalIterator<T> ::BidirectionalIterator(Node<T> *Nodes){current=Nodes;}
         /*Equals an iterator to another*/
