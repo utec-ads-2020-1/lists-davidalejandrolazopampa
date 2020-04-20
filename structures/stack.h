@@ -47,14 +47,16 @@ void stack<T>::push(T value){
 /*Removes an element*/
 template <typename T>
 void stack<T>::pop(){
-    if(!empty()){data[top--];}
-    else{out_of_range("Empty");}
+    if(!empty()){
+        data[top]=data[top+1];
+        top--;}
+    else{throw new out_of_range("Empty");}
 }
 /*Returns the top element*/
 template <typename T>
 T stack<T>::peak(){
     if(!empty()){return data[top];}
-    else{out_of_range("Empty");}
+    else{throw new out_of_range("Empty");}
 }
 /*The current count of elements*/
 template <typename T>
