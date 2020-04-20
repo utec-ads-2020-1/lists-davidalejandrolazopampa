@@ -23,6 +23,8 @@ public:
 
     int size();
     bool empty();
+    void print();
+    void resize(T*);
 };
 /*
 //////////Iniciando//////////
