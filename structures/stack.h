@@ -32,18 +32,16 @@ template <typename T>
 void stack<T>::resize(T *size2) {
     size2=new T[capacity*2];
     for(int i=0;i<size();++i){size2[i]=data[i];}
-        delete []data;
-        data=size2;
-    }
+    delete []data;
+    data=size2;
+}
 /*constructor*/
-
 template <typename T>
 stack<T>::stack(int size){
     capacity = size;
     data=new T[capacity];
     top = -1;
 }
-
 /*Destroyer*/
 template <typename T>
 stack<T>::~stack(){delete [] data;}
