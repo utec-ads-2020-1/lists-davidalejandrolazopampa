@@ -43,17 +43,17 @@ void queue<T>::push(T value){
 }
 /*Removes an element*/
 template <typename T>
-int queue<T>::pop(){
+void queue<T>::pop(){
 
 }
 /*Returns the top element*/
 template <typename T>
-int queue<T>::front(){
+T queue<T>::front(){
 
 }
 /*Returns the back element*/
 template <typename T>
-int queue<T>::back(){
+T queue<T>::back(){
 
 }
 /*The current count of elements*/

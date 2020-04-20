@@ -22,55 +22,54 @@ public:
 
     int size();
     bool empty();
+
+    void print();
 };
 
 //////////Iniciando//////////
 /*constructor*/
 
 template <typename T>
-stack<T>::stack(int value){
-    cout<<value;
+stack<T>::stack(int size){
+    capacity = size;
+    data=new T[capacity];
+    top = -1;
 }
 
 /*Destroyer*/
-/*
 template <typename T>
-stack<T>::~stack(){
-
-}
- */
+stack<T>::~stack(){delete [] data;}
 /*Adds an element*/
-/*
 template <typename T>
 void stack<T>::push(T value){
-
+    data[++top]=value;
 }
- */
 /*Removes an element*/
-/*
 template <typename T>
 void stack<T>::pop(){
-
+    if(!empty()){data[top--];}
+    else{out_of_range("Empty");}
 }
- */
 /*Returns the top element*/
-/*
 template <typename T>
 T stack<T>::peak(){
-
+    if(!empty()){return data[top];}
+    else{out_of_range("Empty");}
 }
-*/
 /*The current count of elements*/
-/*
 template <typename T>
 int stack<T>::size(){
-
-}*/
+    return top+1;
+}
 /*If the data structure is empty*/
-/*
 template <typename T>
 bool stack<T>::empty(){
-
+    return( top==-1);
 }
-*/
+template<typename T>
+void stack<T>::print(){
+    for(int i = top; i >= 0; --i) { cout << data[i] << "->";}
+    cout<<endl;
+}
+
 #endif
