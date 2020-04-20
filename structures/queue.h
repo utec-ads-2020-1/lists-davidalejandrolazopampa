@@ -38,51 +38,52 @@ void queue<T>::resize(T *size2){
 /*constructor*/
 template <typename T>
 queue<T>::queue(int size){
+    data=new T(size);
     capacity=size;
-    data=new T[capacity];
+    top=-1;
 }
 /*Destroyer*/
 template <typename T>
-queue<T>::~queue() {delete [] data;}
+queue<T>::~queue() { delete [] data;}
 /*Adds an element*/
 template <typename T>
 void queue<T>::push(T value){
-        data[top]=value;
-        top++;
+    ++top;
+    data[top]=value;
+
 }
 /*Removes an element*/
 template <typename T>
 void queue<T>::pop(){
-    if(empty()){}
-    else{
-        for(int i=0;i<top;++i)
-        {data[i]=data[i+1];}
-    }
+    T *newData = data;
+    data = ++newData;
+    top--;
 }
 /*Returns the top element*/
 template <typename T>
 T queue<T>::front(){
     if(empty()){}
-    else{ data[0];}
+    else{ data[capacity];}
 }
 /*Returns the back element*/
 template <typename T>
 T queue<T>::back(){
     if(empty()){}
-    else{data[top-1];}
+    else{return data[top];}
 }
 /*The current count of elements*/
 template <typename T>
 int queue<T>::size(){
-    return top;
+    return top+1;
 }
 /*If the data structure is empty*/
 template <typename T>
 bool queue<T>::empty(){
-return top==0;
+return top==-1;
 }
 template<typename T>
 void queue<T>::print(){
-
+    for(int i = top; i >= 0; --i) { cout << data[i] << " -> ";}
+    cout<<endl;
 }
 #endif
