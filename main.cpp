@@ -11,6 +11,7 @@ int main(int argc, char *argv[]) {
     cout << "===========================================================" << endl;
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
+    //Tester::execute();
 
     cout<<"Prueba Stack"<<endl;
 

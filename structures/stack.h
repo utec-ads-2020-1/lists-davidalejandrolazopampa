@@ -24,9 +24,17 @@ public:
     bool empty();
 
     void print();
+    void resize(T*);
 };
 
 //////////Iniciando//////////
+template <typename T>
+void stack<T>::resize(T *size2) {
+    size2=new T[capacity*2];
+    for(int i=0;i<size();++i){size2[i]=data[i];}
+        delete []data;
+        data=size2;
+    }
 /*constructor*/
 
 template <typename T>
@@ -42,7 +50,10 @@ stack<T>::~stack(){delete [] data;}
 /*Adds an element*/
 template <typename T>
 void stack<T>::push(T value){
-    data[++top]=value;
+    if(top>=capacity){
+        T*newArray;
+        resize(newArray);
+    }data[++top]=value;
 }
 /*Removes an element*/
 template <typename T>
@@ -70,7 +81,7 @@ bool stack<T>::empty(){
 }
 template<typename T>
 void stack<T>::print(){
-    for(int i = top; i >= 0; --i) { cout << data[i] << "->";}
+    for(int i = top; i >= 0; --i) { cout << data[i] << " -> ";}
     cout<<endl;
 }
 

@@ -46,5 +46,10 @@ void List<T>::print(){
         cout << endl;
     }
 }
+template<typename T>
+List<T>::~List(){
+   // tail->next = nullptr;//circular :) Not Bucle
+    //head->killSelf();
+}
 
 #endif
