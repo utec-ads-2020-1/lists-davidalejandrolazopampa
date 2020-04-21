@@ -26,7 +26,6 @@ public:
     void print();
     void resize(T*);
 };
-
 //////////Iniciando//////////
 template <typename T>
 void stack<T>::resize(T *size2) {

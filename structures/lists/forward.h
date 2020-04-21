@@ -42,7 +42,6 @@ class ForwardList : public List<T>{
         */
         void merge(ForwardList<T>&);
 
-
 };
         //////////Iniciando//////////
         /*Returns the top element*/

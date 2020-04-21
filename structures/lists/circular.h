@@ -42,7 +42,6 @@ class CircularLinkedList : public List<T> {
         */
         void merge(CircularLinkedList<T>&);
 
-
 };
         //////////Iniciando//////////
         /*Returns the top element*/
@@ -183,14 +182,10 @@ class CircularLinkedList : public List<T> {
         }
         /**/
         template<typename T>
-        BidirectionalIterator<T> CircularLinkedList<T>::begin(){
-            return BidirectionalIterator<T>(this->head);
-        }
+        BidirectionalIterator<T> CircularLinkedList<T>::begin(){return BidirectionalIterator<T>(this->head);}
         /**/
         template<typename T>
-        BidirectionalIterator<T> CircularLinkedList<T>::end(){
-            return BidirectionalIterator<T>(this->tail->next);
-        }
+        BidirectionalIterator<T> CircularLinkedList<T>::end(){return BidirectionalIterator<T>(this->tail->next);}
         /*Transfers all elements*/
         template<typename T>
         void CircularLinkedList<T>::merge(CircularLinkedList<T> &list){

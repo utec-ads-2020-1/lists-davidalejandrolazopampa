@@ -30,8 +30,6 @@ class List {
         virtual void reverse() = 0;
         virtual string name() = 0;
         virtual void print();
-
-
 };
 template<typename T>
 void List<T>::print(){
@@ -48,8 +46,8 @@ void List<T>::print(){
 }
 template<typename T>
 List<T>::~List(){
-   // tail->next = nullptr;//circular :) Not Bucle
-    //head->killSelf();
+    tail->next = nullptr;//circular :) Not Bucle
+    head->killSelf();
 }
 
 #endif

@@ -2,19 +2,16 @@
 #include "test/tester.h"
 #include "structures/stack.h"
 #include "structures/queue.h"
-//#include "structures/lists/list.h"
-//#include "structures/lists/forward.h"
-//#include "structures/lists/linked.h"
-//#include "structures/lists/circular.h"
+
 using namespace std;
 
 int main(int argc, char *argv[]) {
     cout << "===========================================================" << endl;
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
-    //Tester::execute();
-/*
-    cout<<"Prueba Stack"<<endl;
+    Tester::execute();
+
+    cout<<"**************Prueba Stack**************"<<endl;
     auto* stack1 = new stack<int>(1);
     stack1->push(3);
     stack1->push(13);
@@ -34,9 +31,8 @@ int main(int argc, char *argv[]) {
     cout << "Peak: " << stack1->peak() << endl;
     cout << "Size: " << stack1->size() << endl;
     delete stack1;
-    */
 
-    cout<<"QUEUE test"<<endl;
+    cout<<"**************QUEUE test**************"<<endl;
     auto* queue1 = new queue<int>(2);
     queue1->push(4);queue1->print();
     cout << "Front: " << queue1->front() << endl;
@@ -61,7 +57,5 @@ int main(int argc, char *argv[]) {
     cout << "Back: " << queue1->back() << endl;
     cout << "Size: " << queue1->size() << endl;
     delete queue1;
-
-
     return EXIT_SUCCESS;
 }

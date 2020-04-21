@@ -5,6 +5,7 @@ int Mocker::generateRandomInt(int min) {
     return distribution(rng);
 }
 
+
 char Mocker::generateRandomChar() {
     int increment = generateRandomInt() % 26;
     return 'a' + increment;

@@ -126,14 +126,10 @@ T LinkedList<T>::operator[](int index) {
 }
 /*If the data structure is empty*/
 template <typename T>
-bool LinkedList<T>::empty(){
-    return this->head == nullptr && this->tail == nullptr;
-}
+bool LinkedList<T>::empty(){return this->head == nullptr && this->tail == nullptr;}
 /*The current count of elements*/
 template <typename T>
-int LinkedList<T>::size(){
-    return this->nodes;
-}
+int LinkedList<T>::size(){return this->nodes;}
 /*Remove all the elements*/
 template <typename T>
 void LinkedList<T>::clear(){
@@ -178,14 +174,10 @@ void LinkedList<T>::reverse(){
 }
 /**/
 template <typename T>
-BidirectionalIterator<T> LinkedList<T>::begin() {
-    return BidirectionalIterator<T>(this->head);
-}
+BidirectionalIterator<T> LinkedList<T>::begin() {return BidirectionalIterator<T>(this->head);}
 /**/
 template <typename T>
-BidirectionalIterator<T> LinkedList<T>::end() {
-    return BidirectionalIterator<T>(this->tail->next);
-}
+BidirectionalIterator<T> LinkedList<T>::end() {return BidirectionalIterator<T>(this->tail->next);}
 /*Transfers all elements*/
 template <typename T>
 void LinkedList<T>::merge(LinkedList<T> &list){

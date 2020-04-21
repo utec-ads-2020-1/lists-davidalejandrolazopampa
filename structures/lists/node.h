@@ -20,7 +20,6 @@ struct Node {
             next->reverseForward(node);
         next->next=this;
     }
-
 };
 
 #endif

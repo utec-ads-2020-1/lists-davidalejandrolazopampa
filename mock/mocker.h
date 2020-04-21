@@ -3,7 +3,6 @@
 
 #include <random>
 #include <type_traits>
-
 using namespace std;
 
 #define MIN 0
@@ -20,6 +19,7 @@ class Mocker {
 
         int generateRandomInt(int min = MIN);
         char generateRandomChar();
+
 
         template <typename T>
         T* generateRandomArray(unsigned int size) {

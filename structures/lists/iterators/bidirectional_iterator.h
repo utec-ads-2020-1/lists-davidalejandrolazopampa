@@ -21,7 +21,6 @@ class BidirectionalIterator {
         BidirectionalIterator<T> operator--();
 
         T operator*();
-
 };
         //////////Iniciando//////////
         template <typename T>

@@ -15,10 +15,7 @@ class ForwardIterator {
         bool operator!=(ForwardIterator<T>);
         ForwardIterator<T> operator++();
         T operator*();
-        ///////////////////////
-
 };
-
 //////////Iniciando//////////
 template <typename T>
 ForwardIterator<T>::ForwardIterator():current(){}

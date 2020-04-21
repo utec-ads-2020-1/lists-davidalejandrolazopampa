@@ -26,7 +26,6 @@ public:
     void print();
     void resize(T*);//aumentar tamaño
 };
-
 //////////Iniciando//////////
 template<typename T>
 void queue<T>::resize(T *size2){
@@ -49,12 +48,11 @@ queue<T>::~queue() {delete [] data;}
 template <typename T>
 void queue<T>::push(T value){
     if(top>=capacity){
-        T* newArray;
+        T* newArray = nullptr;
         resize(newArray);
     }
     ++top;
     data[top]=value;
-
 }
 /*Removes an element*/
 template <typename T>
@@ -80,14 +78,10 @@ T queue<T>::back(){
 }
 /*The current count of elements*/
 template <typename T>
-int queue<T>::size(){
-    return top+1;
-}
+int queue<T>::size(){return top+1;}
 /*If the data structure is empty*/
 template <typename T>
-bool queue<T>::empty(){
-return top==-1;
-}
+bool queue<T>::empty(){return top==-1;}
 template<typename T>
 void queue<T>::print(){
     for(int i = top; i >= 0; --i) { cout << data[i] << " -> ";}
