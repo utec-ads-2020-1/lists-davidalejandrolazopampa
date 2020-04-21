@@ -37,17 +37,21 @@ void queue<T>::resize(T *size2){
 }
 /*constructor*/
 template <typename T>
-queue<T>::queue(int size){
-    data=new T(size);
-    capacity=size;
-    top=-1;
+queue<T>::queue(int size) {
+    data = new T[size];
+    capacity = size;
+    top = -1;
 }
 /*Destroyer*/
 template <typename T>
-queue<T>::~queue() { delete [] data;}
+queue<T>::~queue() {delete [] data;}
 /*Adds an element*/
 template <typename T>
 void queue<T>::push(T value){
+    if(top>=capacity){
+        T* newArray;
+        resize(newArray);
+    }
     ++top;
     data[top]=value;
 
@@ -55,20 +59,23 @@ void queue<T>::push(T value){
 /*Removes an element*/
 template <typename T>
 void queue<T>::pop(){
-    T *newData = data;
-    data = ++newData;
-    top--;
+    if(!empty()){
+        for(int i=0;i<top-1;i++){
+            data[i]=data[i+1];
+        }
+        top--;
+    } else{throw new out_of_range("Empty");}
 }
 /*Returns the top element*/
 template <typename T>
 T queue<T>::front(){
-    if(empty()){}
-    else{ data[capacity];}
+    if(empty()){throw new out_of_range("Empty");}
+    else{ return data[0];}
 }
 /*Returns the back element*/
 template <typename T>
 T queue<T>::back(){
-    if(empty()){}
+    if(empty()){throw new out_of_range("Empty");}
     else{return data[top];}
 }
 /*The current count of elements*/
