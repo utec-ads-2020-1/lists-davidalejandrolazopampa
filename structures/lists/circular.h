@@ -46,14 +46,15 @@ class CircularLinkedList : public List<T> {
         //////////Iniciando//////////
         /*Returns the top element*/
         template<typename T>
-        T CircularLinkedList<T>::front() {return this->head->data;}
+        T CircularLinkedList<T>::front() {return this->head->data;}//  Si head es null?
         /*Returns the back element*/
         template<typename T>
-        T CircularLinkedList<T>::back(){return this->tail->data;}
+        T CircularLinkedList<T>::back(){return this->tail->data;}//  Si tail es null?
         /*Adds an element to the front*/
         template<typename T>
         void CircularLinkedList<T>::push_front(T value){
             Node<T>* newNode=new Node<T>;
+            // falta que next y prev sean nullptr
             newNode->data=value;
             if (!empty()){
                 newNode->prev = this->head->prev;
@@ -71,7 +72,9 @@ class CircularLinkedList : public List<T> {
         template<typename T>
         void CircularLinkedList<T>::push_back(T value){
             Node<T>* newNode=new Node<T>;
+            // falta que next y prev sean nullptr
             newNode->data=value;
+            // Se puede reducir el código
             if(this->nodes){
                 newNode->next=this->head;
                 newNode->prev=this->tail;
@@ -124,7 +127,7 @@ class CircularLinkedList : public List<T> {
             Node<T>* newNode = this->head;
             if(index<0){throw out_of_range("Not Index in the position");}
             for(int i=0;i<=index;++i){
-
+                // Esta implementación dará warning
                 if(i == index){ return newNode->data;}
                 else{newNode = newNode->next;}
             }
